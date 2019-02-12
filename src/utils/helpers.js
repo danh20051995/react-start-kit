@@ -50,6 +50,24 @@ const errorHandle = error => errorNotify({ message: apiErrorMessage(error.respon
 
 const successHandle = message => successNotify({ message })
 
+const uppercase = string => String(string).toUpperCase()
+
+const lowercase = string => String(string).toLowerCase()
+
+/**
+ * Generate not duplicate base on module name
+ * @param {Number} length
+ * @return {String}
+ */
+function randomString (length) {
+  length = Number(length) ? Number(length) : 10
+  let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  let string = ''
+  for (let i = 0; i < length; i++) {
+    string += letters[ Math.floor(Math.random() * letters.length) ]
+  }
+  return string
+}
 export {
   errorNotify,
   successNotify,
@@ -57,7 +75,10 @@ export {
   infoNotify,
   apiErrorMessage,
   errorHandle,
-  successHandle
+  successHandle,
+  uppercase,
+  lowercase,
+  randomString
 }
 
 export default {
@@ -67,5 +88,8 @@ export default {
   infoNotify,
   apiErrorMessage,
   errorHandle,
-  successHandle
+  successHandle,
+  uppercase,
+  lowercase,
+  randomString
 }

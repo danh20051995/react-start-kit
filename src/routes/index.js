@@ -3,6 +3,7 @@
 import NotFound from 'modules/core/components/404'
 import Core from 'modules/core/routes'
 import Todo from 'modules/todo/routes'
+import Test from 'modules/test/routes'
 
 export default [
   // {
@@ -19,6 +20,7 @@ export default [
   // },
   ...Core,
   ...Todo,
+  ...Test,
   // {
   //   label: 'Todo list',
   //   path: '/todos',

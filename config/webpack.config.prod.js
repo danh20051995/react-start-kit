@@ -84,11 +84,12 @@ module.exports = {
     // https://github.com/facebookincubator/create-react-app/issues/290
     extensions: ['.js', '.json', '.jsx'],
     alias: {
-      'store': path.resolve(__dirname, '../src/redux'),
+      'store': path.resolve(__dirname, '../src/store'),
       'routes': path.resolve(__dirname, '../src/routes'),
       'layouts': path.resolve(__dirname, '../src/layouts'),
       'modules': path.resolve(__dirname, '../src/modules'),
       'utils': path.resolve(__dirname, '../src/utils'),
+      'styles': path.resolve(__dirname, '../src/styles'),
       
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/

@@ -7,6 +7,7 @@
 // import React, { Component } from 'react'
 import Home from 'modules/core/components/home'
 import Forbidden from 'modules/core/components/403'
+import Notfound from 'modules/core/components/404'
 export default [
   {
     label: 'Home',
@@ -18,5 +19,9 @@ export default [
   {
     path: '/403',
     main: Forbidden
+  },
+  {
+    path: '/404',
+    main: Notfound
   }
 ]

@@ -1,0 +1,13 @@
+.todo-list {
+  padding: 2px 4px;
+
+  th,
+  td {
+    border: 1px solid black;
+    padding: 2px 4px;
+  }
+
+  td {
+    word-break: break-all;
+  }
+}
