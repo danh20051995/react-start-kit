@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import queryString from 'query-string'
 import { setLoading } from '_store/actions'
 import TodoService from '_modules/todo/service'
-import { successHandle, errorHandle } from '_utils/helpers'
+import helpers, { successHandle, errorHandle } from '_utils/helpers'
 import Pagination from '_layouts/pagination'
 
 class List extends Component {
@@ -57,7 +57,7 @@ class List extends Component {
       await TodoService.status({ _id, status: status === 'open' ? 'close' : 'open' })
       this.setState({
         ...this.state,
-        items: this.state.items.map(td => {
+        items: helpers.ensureArray(this.state.items).map(td => {
           if (td._id === _id) {
             td.status = status === 'open' ? 'close' : 'open'
           }
@@ -107,7 +107,7 @@ class List extends Component {
           </thead>
 
           <tbody>
-            {this.state.items.map((todo, index) => {
+            {helpers.ensureArray(this.state.items).map((todo, index) => {
               return (
                 <tr key={index}>
                   <th scope="row">{todo._id}</th>

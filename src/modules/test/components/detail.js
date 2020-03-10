@@ -16,7 +16,7 @@ class Detail extends Component {
     super(props)
     this.state = {
       formData: {
-        _id: helpers.lowercase(helpers.randomString(24)),
+        _id: helpers.lowerCase(helpers.randomString(24)),
         name: '',
         status: 'open',
         description: ''

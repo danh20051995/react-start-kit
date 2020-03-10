@@ -32,7 +32,7 @@ const status = ({ _id, status }) => Axios.put('/todos/' + _id + '/status', { sta
 const getItem = ({ _id, ...params }) => Axios.get('/todos/' + _id, { params })
 
 /**
- * Call API get todo detail
+ * Call API remove todo detail
  * @param {Object} params
  * @return {Promise}
  */

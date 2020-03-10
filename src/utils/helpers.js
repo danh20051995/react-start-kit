@@ -50,9 +50,93 @@ const errorHandle = error => errorNotify({ message: apiErrorMessage(error.respon
 
 const successHandle = message => successNotify({ message })
 
-const uppercase = string => String(string).toUpperCase()
+/**
+ * @param {Number} time
+ * @return {Promise}
+ */
+const sleep = time => new Promise(resolve => setTimeout(resolve, time))
 
-const lowercase = string => String(string).toLowerCase()
+/**
+ * Check input is Array or not
+ * @param {Any} arr
+ * @return {Boolean}
+ */
+const isArray = arr => Array.isArray(arr)
+
+/**
+ * Check input is Object or not
+ * @param {Any} obj
+ * @return {Boolean}
+ */
+const isObject = obj => obj && typeof obj === 'object' && !Array.isArray(obj)
+
+/**
+ * Valid input is an Array
+ * @param {Any} arr
+ * @return {Array}
+ */
+const ensureArray = (arr, defaultValue) => isArray(arr) ? arr : isArray(defaultValue) ? defaultValue : []
+
+/**
+ * Uppercase string
+ * @param {String} string
+ * @return {String}
+ */
+const upperCase = string => {
+  if (typeof string === 'string') {
+    return string.toUpperCase()
+  }
+  return string
+}
+
+/**
+ * Lowercase string
+ * @param {String} string
+ * @return {String}
+ */
+const lowerCase = string => {
+  if (typeof string === 'string') {
+    return string.toLowerCase()
+  }
+
+  return string
+}
+
+/**
+ * Convert string to camel case
+ * @return {String}
+ */
+const camelCase = str => String(str)
+  .toLowerCase()
+  // Replaces any - or _ characters with a space
+  .replace(/[-_]+/g, ' ')
+  // Removes any non alphanumeric characters
+  .replace(/[^\w\s]/g, '')
+  // Uppercase the first character in each group immediately following a space
+  // (delimited by spaces)
+  .replace(/ (.)/g, $1 => $1.toUpperCase())
+  // Removes spaces
+  .replace(/ /g, '')
+
+/**
+ * Convert string to pascal case
+ * @return {String}
+ */
+const pascalCase = str => String(str)
+  // Replaces any - or _ characters with a space
+  .replace(/[-_]+/g, ' ')
+  // Removes any non alphanumeric characters
+  .replace(/[^\w\s]/g, '')
+  // Uppercase the first character in each group immediately following a space
+  // (delimited by spaces)
+  .replace(
+    /\s+(.)(\w+)/g,
+    ($1, $2, $3) => `${$2.toUpperCase() + $3.toLowerCase()}`
+  )
+  // Removes spaces
+  .replace(/\s/g, '')
+  // Uppercase first letter
+  .replace(/\w/, s => s.toUpperCase())
 
 /**
  * Generate not duplicate base on module name
@@ -68,6 +152,7 @@ function randomString (length) {
   }
   return string
 }
+
 export {
   errorNotify,
   successNotify,
@@ -76,8 +161,14 @@ export {
   apiErrorMessage,
   errorHandle,
   successHandle,
-  uppercase,
-  lowercase,
+  sleep,
+  isArray,
+  isObject,
+  ensureArray,
+  upperCase,
+  lowerCase,
+  camelCase,
+  pascalCase,
   randomString
 }
 
@@ -89,7 +180,13 @@ export default {
   apiErrorMessage,
   errorHandle,
   successHandle,
-  uppercase,
-  lowercase,
+  sleep,
+  isArray,
+  isObject,
+  ensureArray,
+  upperCase,
+  lowerCase,
+  camelCase,
+  pascalCase,
   randomString
 }

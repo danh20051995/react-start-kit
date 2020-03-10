@@ -9,10 +9,10 @@ import helpers from '_utils/helpers'
 const initialState = {
   loading: false,
   todos: Array.from(new Array(10), () => ({
-    _id: helpers.lowercase(helpers.randomString(24)),
-    name: 'name: ' + helpers.lowercase(helpers.randomString(50)),
+    _id: helpers.lowerCase(helpers.randomString(24)),
+    name: 'name: ' + helpers.lowerCase(helpers.randomString(50)),
     status: 'open',
-    description: 'description: ' + helpers.lowercase(helpers.randomString(150))
+    description: 'description: ' + helpers.lowerCase(helpers.randomString(150))
   }))
 }
 

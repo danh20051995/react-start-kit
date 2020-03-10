@@ -15,7 +15,6 @@ class Home extends Component {
   // }
 
   async componentDidMount() {
-    console.log('componentDidMount')
     // this.props.setLoading(true)
     // try {
     //   let resp1 = await Axios.get('/test')
