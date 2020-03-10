@@ -1,10 +1,9 @@
 /**
- * File name: webpack.config.js
+ * File name: webpack.common.js
  * Created by Visual studio code
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2020-03-10 14:02:30
  */
-require('dotenv').config()
 
 const path = require('path')
 const webpack = require('webpack')
@@ -12,12 +11,11 @@ const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 
 const paths = require('./config/paths')
-const getClientEnvironment = require('./config/env');
+const getClientEnvironment = require('./config/env')
 
-const publicPath = '/';
-const publicUrl = '';
+const publicPath = '/'
+const publicUrl = ''
 const env = getClientEnvironment(publicUrl)
-
 
 module.exports = {
   module: {
@@ -120,10 +118,6 @@ module.exports = {
     publicPath: publicPath,
     // Point sourcemap entries to original disk location
     devtoolModuleFilenameTemplate: info => path.resolve(info.absoluteResourcePath),
-  },
-  // webpack-dev-server section
-  devServer: {
-    contentBase: path.resolve(__dirname, 'build')
   },
   plugins: [
     new webpack.ProgressPlugin(),
