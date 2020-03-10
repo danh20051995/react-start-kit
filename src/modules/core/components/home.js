@@ -7,7 +7,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 import { connect } from 'react-redux'
-import { setLoading } from 'store/actions'
+import { setLoading } from '_store/actions'
 
 class Home extends Component {
   // constructor (props) {

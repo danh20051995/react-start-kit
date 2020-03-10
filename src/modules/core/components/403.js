@@ -6,7 +6,7 @@
 */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setLoading } from 'store/actions'
+import { setLoading } from '_store/actions'
 
 class Forbidden extends Component {
   // constructor (props) {

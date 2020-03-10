@@ -7,10 +7,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import queryString from 'query-string'
-import { setLoading } from 'store/actions'
-import TodoService from 'modules/todo/service'
-import { successHandle, errorHandle } from 'utils/helpers'
-import Pagination from 'layouts/pagination'
+import { setLoading } from '_store/actions'
+import TodoService from '_modules/todo/service'
+import { successHandle, errorHandle } from '_utils/helpers'
+import Pagination from '_layouts/pagination'
 
 class List extends Component {
   constructor (props) {

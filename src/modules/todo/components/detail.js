@@ -7,9 +7,9 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
-import { setLoading } from 'store/actions'
-import TodoService from 'modules/todo/service'
-import { successHandle, errorHandle } from 'utils/helpers'
+import { setLoading } from '_store/actions'
+import TodoService from '_modules/todo/service'
+import { successHandle, errorHandle } from '_utils/helpers'
 
 class Detail extends Component {
   constructor (props) {

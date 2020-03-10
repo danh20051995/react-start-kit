@@ -4,8 +4,8 @@
 * User: Danh Le / danh.danh20051995@gmail.com
 * Date: 2019-01-16 22:18:07
 */
-import List from 'modules/test/components/list'
-import Detail from 'modules/test/components/detail'
+import List from '_modules/test/components/list'
+import Detail from '_modules/test/components/detail'
 
 export default [
   {

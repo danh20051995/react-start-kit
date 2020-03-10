@@ -7,7 +7,7 @@
 /* eslint-disable */
 import React, { Component } from 'react'
 import { Switch, BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Routes from 'routes'
+import Routes from '_routes'
 
 class Main extends Component {
   // constructor (props) {

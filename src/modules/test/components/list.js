@@ -6,9 +6,9 @@
 */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateTodos, removeTodo } from 'store/actions'
-import { successHandle, errorHandle } from 'utils/helpers'
-import 'styles/Test.scss'
+import { updateTodos, removeTodo } from '_store/actions'
+import { successHandle, errorHandle } from '_utils/helpers'
+import '_styles/Test.scss'
 
 class List extends Component {
   constructor (props) {

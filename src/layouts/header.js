@@ -7,10 +7,10 @@
 /* eslint-disable */
 import React, { Component } from 'react'
 import { matchPath, withRouter, BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Routes from 'routes'
+import Routes from '_routes'
 
 // import { connect } from 'react-redux'
-// import { setLoading } from 'store/actions'
+// import { setLoading } from '_store/actions'
 
 class Header extends Component {
   constructor(props) {

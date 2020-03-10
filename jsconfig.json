@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {     
+      "_store/*": ["src/store/*"],
+      "_routes/*": ["src/routes/*"],
+      "_layouts/*": ["src/layouts/*"],
+      "_modules/*": ["src/modules/*"],
+      "_utils/*": ["src/utils/*"],
+      "_styles/*": ["src/styles/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
