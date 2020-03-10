@@ -31,7 +31,10 @@ module.exports = merge(common, {
       ignored: /node_modules/
     },
     proxy: {
-      '/api': process.env.PROXY || package.proxy || 'http://localhost:3000/api'
-    }
+      '^/api/**': {
+        target: process.env.PROXY || package.proxy || 'http://localhost:3000/api'
+      }
+    },
+    historyApiFallback: true
   }
 })

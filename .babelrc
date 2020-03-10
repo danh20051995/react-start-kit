@@ -1,13 +1,11 @@
+
 {
   "presets": [
-    "@babel/preset-es2015",
-    // ["@babel/preset-env", {
-    //   "targets": {
-    //     "browsers": [ "last 2 chrome versions" ]
-    //   },
-    //   "corejs": "3",
-    //   "useBuiltIns": "usage"
-    // }],
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": [ "last 2 chrome versions" ]
+      }
+    }],
     "@babel/preset-react"
   ]
 }
