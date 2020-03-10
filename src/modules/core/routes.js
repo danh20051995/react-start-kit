@@ -13,7 +13,6 @@ export default [
     label: 'Home',
     path: '/',
     exact: true,
-    // sidebar: () => <h2>Home</h2>,
     main: Home
   },
   {
