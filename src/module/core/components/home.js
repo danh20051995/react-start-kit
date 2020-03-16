@@ -1,9 +1,9 @@
 /**
-* File name: home.js
-* Created by Visual studio code
-* User: Danh Le / danh.danh20051995@gmail.com
-* Date: 2018-10-22 23:52:59
-*/
+ * File name: home.js
+ * Created by Visual studio code
+ * User: Danh Le / danh.danh20051995@gmail.com
+ * Date: 2018-10-22 23:52:59
+ */
 import React, { Component } from 'react'
 import Axios from 'axios'
 import { connect } from 'react-redux'

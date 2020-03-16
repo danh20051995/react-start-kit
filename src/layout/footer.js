@@ -1,9 +1,9 @@
 /**
-* File name: footer.js
-* Created by Visual studio code
-* User: Danh Le / danh.danh20051995@gmail.com
-* Date: 2019-01-16 20:03:16
-*/
+ * File name: footer.js
+ * Created by Visual studio code
+ * User: Danh Le / danh.danh20051995@gmail.com
+ * Date: 2019-01-16 20:03:16
+ */
 import React, { Component } from 'react'
 import { toast } from 'react-toastify'
 

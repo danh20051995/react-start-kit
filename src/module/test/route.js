@@ -1,11 +1,11 @@
 /**
-* File name: routes.js
-* Created by Visual studio code
-* User: Danh Le / danh.danh20051995@gmail.com
-* Date: 2019-01-16 22:18:07
-*/
-import List from '_modules/test/components/list'
-import Detail from '_modules/test/components/detail'
+ * File name: route.js
+ * Created by Visual studio code
+ * User: Danh Le / danh.danh20051995@gmail.com
+ * Date: 2019-01-16 22:18:07
+ */
+import List from '_module/test/components/list'
+import Detail from '_module/test/components/detail'
 
 export default [
   {

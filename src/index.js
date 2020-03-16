@@ -19,9 +19,9 @@ import registerServiceWorker from './registerServiceWorker'
 // import 'bootstrap/dist/css/bootstrap.css'
 
 // import CSS, scss
-import './styles/App.scss'
-import './styles/Helper.scss'
-import './styles/Loading.scss'
+import '_style/App.scss'
+import '_style/Helper.scss'
+import '_style/Loading.scss'
 
 ReactDOM.render(
 <Provider store={store}>

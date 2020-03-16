@@ -1,9 +1,9 @@
 /**
-* File name: pagination.js
-* Created by Visual studio code
-* User: Danh Le / danh.danh20051995@gmail.com
-* Date: 2019-01-17 23:41:15
-*/
+ * File name: pagination.js
+ * Created by Visual studio code
+ * User: Danh Le / danh.danh20051995@gmail.com
+ * Date: 2019-01-17 23:41:15
+ */
 /* eslint-disable */
 import React, { Component } from 'react'
 

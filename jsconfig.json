@@ -4,11 +4,11 @@
     "baseUrl": ".",
     "paths": {     
       "_store/*": ["src/store/*"],
-      "_routes/*": ["src/routes/*"],
-      "_layouts/*": ["src/layouts/*"],
-      "_modules/*": ["src/modules/*"],
-      "_utils/*": ["src/utils/*"],
-      "_styles/*": ["src/styles/*"]
+      "_route/*": ["src/route/*"],
+      "_layout/*": ["src/layout/*"],
+      "_module/*": ["src/module/*"],
+      "_util/*": ["src/util/*"],
+      "_style/*": ["src/style/*"]
     }
   },
   "exclude": ["node_modules"]

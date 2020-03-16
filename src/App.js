@@ -9,10 +9,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-import Main from '_layouts/main'
-import Footer from '_layouts/footer'
-import Header from '_layouts/header'
-import Loading from '_layouts/loading'
+import Main from '_layout/main'
+import Footer from '_layout/footer'
+import Header from '_layout/header'
+import Loading from '_layout/loading'
 
 import { setLoading } from '_store/actions'
 

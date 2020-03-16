@@ -1,0 +1,14 @@
+
+{
+  // "extends": ["react-app", "plugin:prettier/recommended"],
+  "extends": ["react-app"],
+  // "plugins": ["prettier"],
+  "env": { "es6": true },
+  "rules": {
+    "semi": ["error", "never"],
+    "quotes": ["error", "single"],
+    "no-extra-semi": "error",
+    "no-duplicate-imports": "error",
+    "react-hooks/exhaustive-deps": "off"
+  }
+}

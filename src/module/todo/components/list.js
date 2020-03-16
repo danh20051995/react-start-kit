@@ -1,16 +1,16 @@
 /**
-* File name: list.js
-* Created by Visual studio code
-* User: Danh Le / danh.danh20051995@gmail.com
-* Date: 2019-01-16 22:19:22
-*/
+ * File name: list.js
+ * Created by Visual studio code
+ * User: Danh Le / danh.danh20051995@gmail.com
+ * Date: 2019-01-16 22:19:22
+ */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import queryString from 'query-string'
 import { setLoading } from '_store/actions'
-import TodoService from '_modules/todo/service'
-import helpers, { successHandle, errorHandle } from '_utils/helpers'
-import Pagination from '_layouts/pagination'
+import TodoService from '_module/todo/service'
+import helpers, { successHandle, errorHandle } from '_util/helpers'
+import Pagination from '_layout/pagination'
 
 class List extends Component {
   constructor (props) {

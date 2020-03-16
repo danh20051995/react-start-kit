@@ -64,9 +64,9 @@ module.exports = merge(firstRequire, common, {
       logger(message) {
         if (message.indexOf('Total precache size is') === 0) {
           // This message occurs for every build and is a bit too noisy.
-          return;
+          return
         }
-        console.log(message);
+        console.log(message)
       },
       minify: true,
       // For unknown URLs, fallback to the index page

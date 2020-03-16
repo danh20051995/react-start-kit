@@ -1,13 +1,13 @@
 /**
-* File name: main.js
-* Created by Visual studio code
-* User: Danh Le / danh.danh20051995@gmail.com
-* Date: 2019-01-16 20:03:46
-*/
+ * File name: main.js
+ * Created by Visual studio code
+ * User: Danh Le / danh.danh20051995@gmail.com
+ * Date: 2019-01-16 20:03:46
+ */
 /* eslint-disable */
 import React, { Component } from 'react'
 import { Switch, BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Routes from '_routes'
+import Routes from '_route'
 
 class Main extends Component {
   // constructor (props) {

@@ -1,13 +1,13 @@
 /**
-* File name: header.js
-* Created by Visual studio code
-* User: Danh Le / danh.danh20051995@gmail.com
-* Date: 2019-01-16 20:03:30
-*/
+ * File name: header.js
+ * Created by Visual studio code
+ * User: Danh Le / danh.danh20051995@gmail.com
+ * Date: 2019-01-16 20:03:30
+ */
 /* eslint-disable */
 import React, { Component } from 'react'
 import { matchPath, withRouter, BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Routes from '_routes'
+import Routes from '_route'
 
 // import { connect } from 'react-redux'
 // import { setLoading } from '_store/actions'

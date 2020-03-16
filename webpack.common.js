@@ -7,8 +7,8 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const HtmlWebPackPlugin = require('html-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
 
 const paths = require('./config/paths')
 const getClientEnvironment = require('./config/env')
@@ -24,11 +24,18 @@ module.exports = {
         loader: 'html-loader'
       },
       {
+        enforce: 'pre',
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader'
-        }
+        loader: 'eslint-loader',
+        options: {
+          configFile: path.join(__dirname, '/.eslintrc'),
+        },
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
       },
       {
         test: /\.css$/,
@@ -70,11 +77,11 @@ module.exports = {
   resolve: {
     alias: {
       '_store': path.resolve(__dirname, 'src/store'),
-      '_routes': path.resolve(__dirname, 'src/routes'),
-      '_layouts': path.resolve(__dirname, 'src/layouts'),
-      '_modules': path.resolve(__dirname, 'src/modules'),
-      '_utils': path.resolve(__dirname, 'src/utils'),
-      '_styles': path.resolve(__dirname, 'src/styles')
+      '_route': path.resolve(__dirname, 'src/route'),
+      '_layout': path.resolve(__dirname, 'src/layout'),
+      '_module': path.resolve(__dirname, 'src/module'),
+      '_util': path.resolve(__dirname, 'src/util'),
+      '_style': path.resolve(__dirname, 'src/style')
     }
   },
   plugins: [
