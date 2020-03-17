@@ -27,29 +27,29 @@ package.json proxy
 └── src
     ├── index.js    # main app
     ├── App.js      # main app component
-    ├── layouts     # app layout components
-    ├── routes      # app routes
+    ├── layout      # app layout components
+    ├── route       # app routes
     ├── store       # app redux-store
-    ├── modules     # app modules
+    ├── module      # app modules
     │   ├── core    # core module
     │   │   ├── components  # app simple component (home, 404, 403)
-    │   │   ├── routes.js   # register react-router
+    │   │   ├── route.js    # register react-router
     │   │   └── service.js  # abstractions for making API requests
     │   │
     │   ├── todo    # todo module [demo] [API]
     │   │   ├── components  # module components
-    │   │   ├── routes.js   # module router
+    │   │   ├── route.js    # module router
     │   │   └── service.js  # module service
     │   │
     │   ├── test    # test module [demo] [!API]
     │   │   ├── components  # module components
-    │   │   ├── routes.js   # module router
+    │   │   ├── route.js    # module router
     │   │   └── service.js  # module service
     │   │
     │   └── ...
     │
-    ├── styles      # global - helper style
-    └── utils       # utility functions
+    ├── style       # global - helper style
+    └── util        # utility functions
 ```
 
 ### Util plugins:
