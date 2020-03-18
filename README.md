@@ -21,6 +21,11 @@ npm test
 package.json proxy
 ```
 
+## Environment variables [(dotenv)](https://www.npmjs.com/package/dotenv)
+
+Copy [.env.example](https://github.com/danh20051995/react-start-kit/blob/master/.env.example)
+`cp .env.example .env`
+
 ## Work space
 
 ``` bash
@@ -60,7 +65,7 @@ package.json proxy
 <!-- Todo
 ### Commands (run with node)
 
-`vue-start-kit` responds to the following commands:
+`react-start-kit` responds to the following commands:
 
 Example: `node commander addModule --name="todo"`
 |     Command          |     Description  |
