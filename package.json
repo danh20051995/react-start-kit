@@ -2,7 +2,7 @@
   "name": "react-start-kit",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001/api",
+  "proxy": "http://localhost:3001",
   "description": "Simple react application",
   "author": "danh.danh20051995@gmail.com",
   "repository": {

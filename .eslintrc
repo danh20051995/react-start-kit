@@ -1,14 +1,23 @@
 
 {
-  // "extends": ["react-app", "plugin:prettier/recommended"],
-  "extends": ["react-app"],
-  // "plugins": ["prettier"],
+  // "extends": [ "react-app", "plugin:prettier/recommended" ],
+  "extends": [ "react-app" ],
+  // "plugins": [ "prettier" ],
   "env": { "es6": true },
   "rules": {
-    "semi": ["error", "never"],
-    "quotes": ["error", "single"],
+    "semi": [ "error", "never" ],
+    "quotes": [ "error", "single" ],
+    "comma-dangle": [ "error", "never" ],
     "no-extra-semi": "error",
+    "keyword-spacing": [ "error", {
+      "before": true,
+      "after": true
+    }],
+    "no-multi-spaces": "error",
+    "no-trailing-spaces":"error",
+    "space-before-blocks": "error",
     "no-duplicate-imports": "error",
-    "react-hooks/exhaustive-deps": "off"
+    "array-bracket-spacing": [ "error", "always" ],
+    "react-hooks/exhaustive-deps": "off",
   }
 }

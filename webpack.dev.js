@@ -32,8 +32,8 @@ module.exports = merge(common, {
       ignored: /node_modules/
     },
     proxy: {
-      '^/api/**': {
-        target: process.env.PROXY || packageJson.proxy || 'http://localhost:3000/api'
+      '/api': {
+        target: process.env.PROXY || packageJson.proxy || 'http://localhost:3000'
       }
     },
     historyApiFallback: true
@@ -59,7 +59,7 @@ module.exports = merge(common, {
     // Errors should be considered fatal in development
     require.resolve('react-error-overlay'),
     // Finally, this is your app's code:
-    paths.appIndexJs,
+    paths.appIndexJs
     // We include the app code last so that if there is a runtime error during
     // initialization, it doesn't blow up the WebpackDevServer client, and
     // changing JS code would still trigger a refresh.
@@ -80,6 +80,6 @@ module.exports = merge(common, {
     // Point sourcemap entries to original disk location
     devtoolModuleFilenameTemplate: info => path
       .resolve(info.absoluteResourcePath)
-      .replace(/\\/g, '/'),
+      .replace(/\\/g, '/')
   }
 })

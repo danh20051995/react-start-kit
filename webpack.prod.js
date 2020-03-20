@@ -50,7 +50,7 @@ module.exports = merge(firstRequire, common, {
     // This is the URL that app is served from. We use "/" in development.
     publicPath: '/',
     // Point sourcemap entries to original disk location
-    devtoolModuleFilenameTemplate: info => path.relative(paths.appSrc, info.absoluteResourcePath),
+    devtoolModuleFilenameTemplate: info => path.relative(paths.appSrc, info.absoluteResourcePath)
   },
 
   plugins: [
@@ -73,12 +73,12 @@ module.exports = merge(firstRequire, common, {
       navigateFallback: paths.servedPath.slice(0, -1) + '/index.html',
       // Ignores URLs starting from /__ (useful for Firebase):
       // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
-      navigateFallbackWhitelist: [/^(?!\/__).*/],
+      navigateFallbackWhitelist: [ /^(?!\/__).*/ ],
       // Don't precache sourcemaps (they're large) and build asset manifest:
-      staticFileGlobsIgnorePatterns: [/\.map$/, /asset-manifest\.json$/],
+      staticFileGlobsIgnorePatterns: [ /\.map$/, /asset-manifest\.json$/ ],
       // Work around Windows path issue in SWPrecacheWebpackPlugin:
       // https://github.com/facebookincubator/create-react-app/issues/2235
-      stripPrefix: paths.appBuild.replace(/\\/g, '/') + '/',
+      stripPrefix: paths.appBuild.replace(/\\/g, '/') + '/'
     })
   ],
 
@@ -97,7 +97,7 @@ module.exports = merge(firstRequire, common, {
             // into invalid ecma 5 code. This is why the 'compress' and 'output'
             // sections only apply transformations that are ecma 5 safe
             // https://github.com/facebook/create-react-app/pull/4234
-            ecma: 8,
+            ecma: 8
           },
           compress: {
             ecma: 5,
@@ -111,10 +111,10 @@ module.exports = merge(firstRequire, common, {
             // https://github.com/facebook/create-react-app/issues/5250
             // Pending further investigation:
             // https://github.com/terser-js/terser/issues/120
-            inline: 2,
+            inline: 2
           },
           mangle: {
-            safari10: true,
+            safari10: true
           },
           // Added for profiling in devtools
           keep_classnames: true,
@@ -124,8 +124,8 @@ module.exports = merge(firstRequire, common, {
             comments: false,
             // Turned on because emoji and regex is not minified properly using default
             // https://github.com/facebook/create-react-app/issues/2488
-            ascii_only: true,
-          },
+            ascii_only: true
+          }
         },
         // Use multi-process parallel running to improve the build speed
         // Default number of concurrent runs: os.cpus().length - 1
@@ -134,7 +134,7 @@ module.exports = merge(firstRequire, common, {
         parallel: !isWsl,
         // Enable file caching
         cache: true,
-        sourceMap: true,
+        sourceMap: true
       }),
       // This is only used in production mode
       new OptimizeCSSAssetsPlugin({
@@ -146,10 +146,10 @@ module.exports = merge(firstRequire, common, {
             inline: false,
             // `annotation: true` appends the sourceMappingURL to the end of
             // the css file, helping the browser find the sourcemap
-            annotation: true,
-          },
-        },
-      }),
-    ],
+            annotation: true
+          }
+        }
+      })
+    ]
   }
 })

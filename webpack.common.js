@@ -29,13 +29,13 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'eslint-loader',
         options: {
-          configFile: path.join(__dirname, '/.eslintrc'),
-        },
+          configFile: path.join(__dirname, '/.eslintrc')
+        }
       },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/,
@@ -61,16 +61,17 @@ module.exports = {
           /\.(js|jsx)$/,
           /\.css$/,
           /\.scss$/,
-          /\.json$/,
-          /\.bmp$/,
-          /\.gif$/,
-          /\.jpe?g$/,
-          /\.png$/,
+          /\.json$/
+          // /\.bmp$/,
+          // /\.gif$/,
+          // /\.jpe?g$/,
+          // /\.png$/,
         ],
+        test: /\.(png|jpe?g|gif)$/i,
         loader: 'file-loader',
         options: {
-          name: 'static/media/[name].[hash:8].[ext]',
-        },
+          name: 'static/media/[name].[hash:8].[ext]'
+        }
       }
     ]
   },
