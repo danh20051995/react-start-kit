@@ -13,14 +13,14 @@ export default [
     label: 'Home',
     path: '/',
     exact: true,
-    main: Home
+    component: Home
   },
   {
     path: '/403',
-    main: Forbidden
+    component: Forbidden
   },
   {
     path: '/404',
-    main: Notfound
+    component: Notfound
   }
 ]

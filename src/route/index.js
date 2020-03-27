@@ -9,8 +9,11 @@ export default [
   ...Core,
   ...Todo,
   ...Test,
+
+  // last route handle 404 error
   {
     path: '*',
-    main: NotFound
+    isPrivate: false,
+    component: NotFound
   }
 ]

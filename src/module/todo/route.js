@@ -12,16 +12,16 @@ export default [
     label: 'Todo',
     path: '/todos',
     exact: true,
-    main: List
+    component: List
   },
   {
     path: '/todos/create',
     exact: true,
-    main: Detail
+    component: Detail
   },
   {
     path: '/todos/:id',
     exact: true,
-    main: Detail
+    component: Detail
   }
 ]

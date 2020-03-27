@@ -7,7 +7,6 @@
 process.env.NODE_ENV = 'development'
 const path = require('path')
 const merge = require('webpack-merge')
-const packageJson = require('./package.json')
 const common = require('./webpack.common.js')
 const paths = require('./config/paths')
 
@@ -28,15 +27,18 @@ module.exports = merge(common, {
     inline: true,
     compress: true,
     watchContentBase: true,
+    disableHostCheck: true,
+    historyApiFallback: true,
     watchOptions: {
       ignored: /node_modules/
     },
     proxy: {
       '/api': {
-        target: process.env.PROXY || packageJson.proxy || 'http://localhost:3000'
+        target: process.env.PROXY || 'http://localhost:3000',
+        secure: false,
+        changeOrigin: true
       }
-    },
-    historyApiFallback: true
+    }
   },
 
   // These are the "entry points" to our application.

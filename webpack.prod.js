@@ -9,6 +9,7 @@ process.env.NODE_ENV = 'production'
 const path = require('path')
 const isWsl = require('is-wsl')
 const merge = require('webpack-merge')
+const CopyPlugin = require('copy-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const safePostCssParser = require('postcss-safe-parser')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -149,7 +150,19 @@ module.exports = merge(firstRequire, common, {
             annotation: true
           }
         }
-      })
+      }),
+      new CopyPlugin([
+        {
+          from: path.resolve(paths.appPublic, 'favicon.ico'),
+          to: path.resolve(paths.appBuild, 'favicon.ico'),
+          toType: 'file'
+        },
+        {
+          from: path.resolve(paths.appPublic, 'static'),
+          to: path.resolve(paths.appBuild, 'static'),
+          toType: 'dir'
+        }
+      ])
     ]
   }
 })

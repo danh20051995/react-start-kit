@@ -12,16 +12,16 @@ export default [
     label: 'Test',
     path: '/tests',
     exact: true,
-    main: List
+    component: List
   },
   {
     path: '/tests/create',
     exact: true,
-    main: Detail
+    component: Detail
   },
   {
     path: '/tests/:id',
     exact: true,
-    main: Detail
+    component: Detail
   }
 ]

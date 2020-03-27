@@ -17,41 +17,41 @@ import Loading from '_layout/loading'
 import { setLoading } from '_store/actions'
 
 class App extends Component {
-	constructor (props) {
-		super(props)
-		this.renderLoading = this.renderLoading.bind(this)
-	}
+  constructor (props) {
+    super(props)
+    this.renderLoading = this.renderLoading.bind(this)
+  }
 
-	componentDidMount () {
-		// setInterval(() => toast('Wow so easy ! ' + Math.random()), 1500)
-	}
+  componentDidMount () {
+    // setInterval(() => toast('Wow so easy ! ' + Math.random()), 1500)
+  }
 
-	renderLoading () {
-		if (this.props.loading) {
-			return <Loading/>
-		}
-		return ''
-	}
+  renderLoading () {
+    if (this.props.loading) {
+      return <Loading/>
+    }
+    return ''
+  }
 
-	render () {
-		return (
-			<div id="app" className="app">
-				<Header/>
-				<Main/>
-				<Footer/>
-				{this.renderLoading()}
-				<ToastContainer/>
-			</div>
-		)
-	}
+  render () {
+    return (
+      <div id="app" className="app">
+        <Header/>
+        <Main/>
+        <Footer/>
+        {this.renderLoading()}
+        <ToastContainer/>
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => ({
-	loading: state.loading
+  loading: state.loading
 })
 
 const mapDispatchToProps = dispatch => ({
-	setLoading: loading => dispatch(setLoading(loading))
+  setLoading: loading => dispatch(setLoading(loading))
 })
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
