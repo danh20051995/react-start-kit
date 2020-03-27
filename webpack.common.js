@@ -101,12 +101,13 @@ module.exports = {
   },
   resolve: {
     alias: {
+      '_util': path.resolve(__dirname, 'src/util'),
       '_store': path.resolve(__dirname, 'src/store'),
       '_route': path.resolve(__dirname, 'src/route'),
-      '_layout': path.resolve(__dirname, 'src/layout'),
+      '_style': path.resolve(__dirname, 'src/style'),
       '_module': path.resolve(__dirname, 'src/module'),
-      '_util': path.resolve(__dirname, 'src/util'),
-      '_style': path.resolve(__dirname, 'src/style')
+      '_layout': path.resolve(__dirname, 'src/layout'),
+      '_constants': path.resolve(__dirname, 'src/constants')
     }
   },
   plugins: [
