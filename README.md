@@ -8,8 +8,11 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:<port> | config .env REACT_APP_PORT default 8080
 npm run start
+
+# start firebase functions|backend API with nodejs
+npm run start:api
 
 # build for production with minification
 npm run build
@@ -41,6 +44,9 @@ Copy [.env.example](https://github.com/danh20051995/react-start-kit/blob/master/
 ## Work space
 
 ``` bash
+└── .firebase       # firebase hosting cache
+└── .vscode         # vscode editor config
+└── functions       # firebase functions
 └── src
     ├── index.js    # main app
     ├── App.js      # main app component
