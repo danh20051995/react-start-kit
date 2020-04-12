@@ -4,11 +4,11 @@
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2018-10-23 00:13:04
  */
-import React, { Component } from 'react'
+import React from 'react'
 
 const Notfound = props => {
   return (
-    <div className="not-found">Page not fount</div>
+    <div className="not-found">Page not found</div>
   )
 }
 

@@ -10,7 +10,7 @@ import queryString from 'query-string'
 import { setLoading } from '_store/actions'
 import TodoService from '_module/todo/service'
 import helpers, { successHandle, errorHandle } from '_util/helpers'
-import Pagination from '_layout/pagination'
+import Pagination from '_components/pagination'
 
 class List extends Component {
   constructor (props) {
@@ -20,15 +20,15 @@ class List extends Component {
     }
   }
 
-  componentDidMount() {
-    let { page } = queryString.parse(this.props.location.search)
+  componentDidMount () {
+    const { page } = queryString.parse(this.props.location.search)
     this.fetchTodos(page)
   }
 
   async fetchTodos (page) {
     this.props.setLoading(true)
     try {
-      let { data } = await TodoService.getItems({
+      const { data } = await TodoService.getItems({
         page: Number(page) >= 1 ? page : 1
       })
 
@@ -86,7 +86,7 @@ class List extends Component {
     this.props.setLoading(false)
   }
 
-  render() {
+  render () {
     let pagination = ''
     if (this.state.pages > 1) {
       pagination = (<Pagination page={this.state.page} pages={this.state.pages} paging={page => this.fetchTodos(page)}/>)
@@ -125,7 +125,7 @@ class List extends Component {
             })}
           </tbody>
         </table>
-        { pagination }
+        {pagination}
       </div>
     )
   }

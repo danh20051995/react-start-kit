@@ -4,12 +4,15 @@
     "baseUrl": ".",
     "paths": {     
       "_util/*": ["src/util/*"],
+      "_i18n/*": ["src/i18n/*"],
       "_style/*": ["src/style/*"],
       "_store/*": ["src/store/*"],
       "_route/*": ["src/route/*"],
       "_layout/*": ["src/layout/*"],
       "_module/*": ["src/module/*"],
-      "_constants/*": ["src/constants/*"]
+      "_static/*": ["public/static/*"],
+      "_constants/*": ["src/constants/*"],
+      "_components/*": ["src/components/*"]
     }
   },
   "exclude": ["node_modules"]

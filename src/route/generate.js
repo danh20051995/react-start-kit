@@ -5,8 +5,8 @@
  * Date: 2020-03-24 20:44:52
  */
 import qs from 'qs'
-import routes from './config'
-import { ensureObject, alphabeticalSort } from '_utils/helpers'
+import routes from '_route'
+import { ensureObject, alphabeticalSort } from '_util/helpers'
 
 /**
  * Replace route parameters with params.
@@ -16,7 +16,7 @@ import { ensureObject, alphabeticalSort } from '_utils/helpers'
  */
 const getPathURL = (routePath, params) => {
   let url = routePath
-  for (let key of Object.keys(params)) {
+  for (const key of Object.keys(params)) {
     url = url.replace(`:${key}`, params[key])
   }
 
@@ -27,7 +27,7 @@ const getPathURL = (routePath, params) => {
  * Generate route path with parameters by name | path
  * @return {String}
  */
-const generate = function(options, queryParams) {
+const generate = function (options, queryParams) {
   let match = options
   let params = {}
   if (Array.isArray(options)) {
@@ -35,9 +35,9 @@ const generate = function(options, queryParams) {
     params = options[1]
   }
 
-  let route = routes.find(route => route.name === match || route.path === match)
+  const route = routes.find(route => route.name === match || route.path === match)
   if (route) {
-    let args = [
+    const args = [
       getPathURL(route.path, params),
       qs.stringify(ensureObject(queryParams), {
         arrayFormat: 'repeat',

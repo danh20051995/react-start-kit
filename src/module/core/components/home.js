@@ -10,11 +10,7 @@ import { connect } from 'react-redux'
 import { setLoading } from '_store/actions'
 
 class Home extends Component {
-  // constructor (props) {
-  // 	super(props)
-  // }
-
-  async componentDidMount() {
+  async componentDidMount () {
     // this.props.setLoading(true)
     // try {
     //   let resp1 = await Axios.get('/test')
@@ -31,7 +27,7 @@ class Home extends Component {
     // }, 500)
   }
 
-  render() {
+  render () {
     return (
       <div className="home-page">Home page</div>
     )

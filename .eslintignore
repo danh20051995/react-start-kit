@@ -3,3 +3,5 @@
 /config
 /public
 /scripts
+/functions
+/**/*.test.js

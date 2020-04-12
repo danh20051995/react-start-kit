@@ -13,10 +13,16 @@ export const initState = {
 const reducer = (state = initState, action) => {
   switch (action.type) {
     case LOGIN:
-      state.credentials = action.payload
+      state = {
+        ...state,
+        credentials: action.value
+      }
       break
     case LOGOUT:
-      state.credentials = {}
+      state = {
+        ...state,
+        credentials: {}
+      }
       break
     default:
       return state

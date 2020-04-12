@@ -39,7 +39,7 @@ class Detail extends Component {
   save (e) {
     e.preventDefault()
     if (this.props.match.params.id) {
-      let todos = this.props.todos.map(t => t._id === this.props.match.params.id ? this.state.formData : t)
+      const todos = this.props.todos.map(t => t._id === this.props.match.params.id ? this.state.formData : t)
       this.props.updateTodos(todos)
       helpers.successHandle('Update todo successfully.')
     } else {
@@ -49,9 +49,9 @@ class Detail extends Component {
     }
   }
 
-  componentDidMount() {
+  componentDidMount () {
     if (this.props.match.params.id) {
-      let todo = this.props.todos.find(t => t._id === this.props.match.params.id)
+      const todo = this.props.todos.find(t => t._id === this.props.match.params.id)
       if (!todo) {
         return this.props.history.push('/404')
       }
@@ -66,16 +66,16 @@ class Detail extends Component {
     }
   }
 
-  render() {
+  render () {
     if (this.state.toList === true) {
-      return <Redirect to='/tests'/>
+      return <Redirect to="/tests"/>
     }
 
     return (
       <div className="d-flex flex-column">
         <div className="col-6 offset-3">
           <h3>Test detail</h3>
-          <form onSubmit={this.save.bind(this)}>
+          <form onSubmit={e => this.save(e)}>
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input id="name" type="text" value={this.state.formData.name} onChange={this.handleChange('name')} className="form-control" placeholder="Name..."/>

@@ -38,7 +38,7 @@ class Detail extends Component {
     e.preventDefault()
     this.props.setLoading(true)
     try {
-      let sendData = this.state.formData
+      const sendData = this.state.formData
       // let { data } = await TodoService.store(sendData)
       await TodoService.store(sendData)
       successHandle('Save todo successfully.')
@@ -52,11 +52,11 @@ class Detail extends Component {
     this.props.setLoading(false)
   }
 
-  async componentDidMount() {
+  async componentDidMount () {
     if (this.props.match.params.id) {
       this.props.setLoading(true)
       try {
-        let { data } = await TodoService.getItem({ _id: this.props.match.params.id })
+        const { data } = await TodoService.getItem({ _id: this.props.match.params.id })
         this.setState({
           ...this.state,
           formData: {
@@ -71,16 +71,16 @@ class Detail extends Component {
     }
   }
 
-  render() {
+  render () {
     if (this.state.toList === true) {
-      return <Redirect to='/todos'/>
+      return <Redirect to="/todos"/>
     }
 
     return (
       <div className="d-flex flex-column">
         <div className="col-6 offset-3">
           <h3>Todo detail</h3>
-          <form onSubmit={this.save.bind(this)}>
+          <form onSubmit={e => this.save(e)}>
             <div className="form-group">
               <label htmlFor="title">Title</label>
               <input id="title" type="text" value={this.state.formData.title} onChange={this.handleChange('title')} className="form-control" placeholder="Title..."/>

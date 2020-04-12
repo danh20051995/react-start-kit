@@ -31,11 +31,11 @@ const root = (state = initialState, action) => {
     case 'LOADING':
       return { ...state, loading: action.value }
     case 'UPDATE_TODOS':
-      return { ...state, todos: action.todos }
+      return { ...state, todos: action.value }
     case 'ADD_TODO':
-      return { ...state, todos: [ ...state.todos, action.todo ] }
+      return { ...state, todos: [ ...state.todos, action.value ] }
     case 'REMOVE_TODO':
-      return { ...state, todos: state.todos.filter(t => t._id !== action._id) }
+      return { ...state, todos: state.todos.filter(t => t._id !== action.value) }
     default:
       return state
   }
@@ -49,4 +49,3 @@ const reducers = combineReducers({
 })
 
 export default reducers
-

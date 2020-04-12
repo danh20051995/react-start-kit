@@ -17,8 +17,20 @@ npm run build
 # run tests
 npm test
 
-# API proxy config
-package.json proxy
+# test build bundle with local firebase static hosting
+firebase serve --only hosting
+
+# start firebase functions and hosting
+firebase serve --port 3000 --only functions,hosting
+
+# deploy build bundle to firebase static hosting
+firebase deploy --only hosting -m "release"
+
+# deploy functions to firebase hosting
+firebase deploy --only functions -m "release"
+
+# firebase deploy all
+firebase deploy -m "release"
 ```
 
 ## Environment variables [(dotenv)](https://www.npmjs.com/package/dotenv)
@@ -32,9 +44,14 @@ Copy [.env.example](https://github.com/danh20051995/react-start-kit/blob/master/
 └── src
     ├── index.js    # main app
     ├── App.js      # main app component
+    ├── components  # atom component
+    ├── constants   # app constant variables
+    ├── i18n        # setup and load i18n multiple languages
     ├── layout      # app layout components
+    ├── style       # global - helper style
     ├── route       # app routes
     ├── store       # app redux-store
+    ├── util        # utility functions
     ├── module      # app modules
     │   ├── core    # core module
     │   │   ├── components  # app simple component (home, 404, 403)
@@ -53,8 +70,6 @@ Copy [.env.example](https://github.com/danh20051995/react-start-kit/blob/master/
     │   │
     │   └── ...
     │
-    ├── style       # global - helper style
-    └── util        # utility functions
 ```
 
 ### Util plugins:

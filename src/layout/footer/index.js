@@ -1,22 +1,15 @@
 /**
- * File name: footer.js
+ * File name: src\layout\footer\index.js
  * Created by Visual studio code
  * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2019-01-16 20:03:16
+ * Date: 2020-04-12 23:17:05
  */
 import React, { Component } from 'react'
-import { toast } from 'react-toastify'
+
+import './style.scss'
 
 class Footer extends Component {
-  // constructor (props) {
-  // 	super(props)
-  // }
-
-  componentDidMount() {
-    // setInterval(() => toast('Notify from footer ! ' + Math.random()), 1500)
-  }
-
-  render() {
+  render () {
     return (
       <footer id="footer" className="footer">
         &copy; {new Date().getFullYear()}

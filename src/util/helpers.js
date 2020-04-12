@@ -78,6 +78,13 @@ const isObject = obj => obj && typeof obj === 'object' && !Array.isArray(obj)
 const ensureArray = (arr, defaultValue) => isArray(arr) ? arr : isArray(defaultValue) ? defaultValue : []
 
 /**
+ * Valid input is an Object
+ * @param {Any} arr
+ * @return {Object}
+ */
+const ensureObject = (obj, defaultValue) => isObject(obj) ? obj : isObject(defaultValue) ? defaultValue : {}
+
+/**
  * Uppercase string
  * @param {String} string
  * @return {String}
@@ -139,18 +146,97 @@ const pascalCase = str => String(str)
   .replace(/\w/, s => s.toUpperCase())
 
 /**
+ * Random number in range
+ * @param {Number} minimum
+ * @param {Number} maximum
+ * @return {Number}
+ */
+const rand = (minimum = 0, maximum = 999999999999) => {
+  return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum
+}
+
+/**
  * Generate not duplicate base on module name
  * @param {Number} length
  * @return {String}
  */
 function randomString (length) {
   length = Number(length) ? Number(length) : 10
-  let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   let string = ''
   for (let i = 0; i < length; i++) {
-    string += letters[ Math.floor(Math.random() * letters.length) ]
+    string += letters[Math.floor(Math.random() * letters.length)]
   }
   return string
+}
+
+/**
+ * Format number to currency
+ * @param {Number} money
+ * @param {Number} fixed
+ * @return {String}
+ */
+const formatCurrency = (money, fixed = 0) => {
+  if (typeof money === 'number' || money) {
+    const numbers = Number(
+      String(money)
+        .split(',')
+        .join('')
+    )
+    return Number(numbers)
+      .toFixed(fixed)
+      .replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.')
+  }
+
+  throw new Error('formatCurrency parameter money invalid')
+}
+
+function formatCardNumber (str, show) {
+  let newStr = ''
+  for (let i = 0; i < str.length; i++) {
+    if (i % 4 === 0) {
+      newStr += ' '
+    }
+    if (!show && i > 3 && i < 12) {
+      newStr += '*'
+    } else {
+      newStr += str[i]
+    }
+  }
+  return newStr
+}
+
+function formatAccountNumber (str, show) {
+  let newStr = ''
+  for (let i = 0; i < str.length; i++) {
+    if (i % 3 === 0) {
+      newStr += ' '
+    }
+    if (!show && i > str.length - 4) {
+      newStr += '*'
+    } else {
+      newStr += str[i]
+    }
+  }
+  return newStr
+}
+/**
+ * alphabeticalSort option of qs module
+ * @param {String} a
+ * @param {String} b
+ */
+const alphabeticalSort = (a, b) => {
+  return a.localeCompare(b)
+}
+
+const convertErrorYup = error => {
+  const errors = {}
+  error.inner.forEach(err => {
+    if (!errors[err.path]) {
+      errors[err.path] = err.message
+    }
+  })
+  return errors
 }
 
 export {
@@ -165,11 +251,18 @@ export {
   isArray,
   isObject,
   ensureArray,
+  ensureObject,
   upperCase,
   lowerCase,
   camelCase,
+  rand,
   pascalCase,
-  randomString
+  randomString,
+  formatCurrency,
+  formatCardNumber,
+  formatAccountNumber,
+  alphabeticalSort,
+  convertErrorYup
 }
 
 export default {
@@ -184,9 +277,16 @@ export default {
   isArray,
   isObject,
   ensureArray,
+  ensureObject,
   upperCase,
   lowerCase,
   camelCase,
+  rand,
   pascalCase,
-  randomString
+  randomString,
+  formatCurrency,
+  formatCardNumber,
+  formatAccountNumber,
+  alphabeticalSort,
+  convertErrorYup
 }

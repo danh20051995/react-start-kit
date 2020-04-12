@@ -1,31 +1,28 @@
 /**
- * File name: main.js
+ * File name: src\layout\main\index.js
  * Created by Visual studio code
  * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2019-01-16 20:03:46
+ * Date: 2020-04-12 23:21:53
  */
-/* eslint-disable */
 import React, { Component } from 'react'
 import { Switch, BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Routes from '_route'
 
-class Main extends Component {
-  // constructor (props) {
-  // 	super(props)
-  // }
+import './style.scss'
 
-  render() {
+class Main extends Component {
+  render () {
     return (
       <main id="main" className="main">
         <Switch>
-          {Routes.map((route, index) => (
+          {Routes.map(route => (
             // Render more <Route>s with the same paths as
             // above, but different components this time.
             <Route
-              key={index}
+              key={route.path}
               path={route.path}
               exact={route.exact}
-              component={route.main}
+              component={route.main || route.component}
             />
           ))}
         </Switch>

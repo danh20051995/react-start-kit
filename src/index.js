@@ -8,10 +8,15 @@ import App from './App'
 import store from '_store'
 import registerServiceWorker from './registerServiceWorker'
 
+// import multiple languages
+// import '_i18n' // uncomment to use
+
 // import CSS, scss
 import '_style/App.scss'
 import '_style/Helper.scss'
-import '_style/Loading.scss'
+
+// load firebase
+// import '_util/firebase' // uncomment to use
 
 ReactDOM.render(
   <Provider store={store}>

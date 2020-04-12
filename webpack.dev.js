@@ -21,7 +21,7 @@ module.exports = merge(common, {
     publicPath: paths.publicPath,
     contentBase: paths.appPublic,
     host: '127.0.0.1',
-    port: process.env.PORT || 8080,
+    port: process.env.REACT_APP_PORT || 8080,
     hot: true,
     quiet: true,
     inline: true,
@@ -34,7 +34,7 @@ module.exports = merge(common, {
     },
     proxy: {
       '/api': {
-        target: process.env.PROXY || 'http://localhost:3000',
+        target: process.env.REACT_APP_PROXY || 'http://localhost:3000',
         secure: false,
         changeOrigin: true
       }

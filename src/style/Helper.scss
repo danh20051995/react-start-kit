@@ -5,3 +5,17 @@ pre {
   white-space: pre-wrap;
   overflow-wrap: break-word;
 }
+
+.pointer {
+  cursor: pointer;
+}
+
+.not-allow, .not-allowed {
+  cursor: not-allowed;
+}
+
+.oneline-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

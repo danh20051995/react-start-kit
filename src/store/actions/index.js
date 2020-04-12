@@ -12,15 +12,15 @@ export const setLoading = value => ({
 
 export const updateTodos = todos => ({
   type: 'UPDATE_TODOS',
-  todos
+  value: todos
 })
 
 export const addTodo = todo => ({
   type: 'ADD_TODO',
-  todo
+  value: todo
 })
 
 export const removeTodo = _id => ({
   type: 'REMOVE_TODO',
-  _id
+  value: _id
 })

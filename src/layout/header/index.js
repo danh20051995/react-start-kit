@@ -1,32 +1,30 @@
 /**
- * File name: header.js
+ * File name: src\layout\header\index.js
  * Created by Visual studio code
  * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2019-01-16 20:03:30
+ * Date: 2020-04-12 23:18:55
  */
-/* eslint-disable */
 import React, { Component } from 'react'
 import { matchPath, withRouter, BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Routes from '_route'
 
-// import { connect } from 'react-redux'
-// import { setLoading } from '_store/actions'
+import './style.scss'
 
 class Header extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.activeClassName = this.activeClassName.bind(this)
   }
 
-  activeClassName(path) {
-    let isActive = matchPath(this.props.location.pathname, path)
+  activeClassName (path) {
+    const isActive = matchPath(this.props.location.pathname, path)
     return isActive && isActive.isExact ? 'active' : ''
   }
 
-  render() {
+  render () {
     return (
       <header id="header" className="header">
-        <ul style={{ listStyleType: "none", padding: 0 }}>
+        <ul style={{ listStyleType: 'none', padding: 0 }}>
           {/* <li>
             <Link to="/" className={this.activeClassName('/')}>Home</Link>
           </li>
@@ -37,7 +35,7 @@ class Header extends Component {
             <Link to="/shoelaces" className={this.activeClassName('/shoelaces')}>Shoelaces</Link>
           </li> */}
 
-          { Routes.map((route, index) => {
+          {Routes.map((route, index) => {
             if (route.label) {
               return (
                 <li key={index}>
@@ -45,7 +43,7 @@ class Header extends Component {
                 </li>
               )
             }
-          }) }
+          })}
 
           {/* {Routes.map((route, index) => (
           // You can render a <Route> in as many places
@@ -67,14 +65,6 @@ class Header extends Component {
     )
   }
 }
-
-// const mapStateToProps = state => ({
-// 	loading: state.loading
-// })
-
-// const mapDispatchToProps = dispatch => ({
-// 	setLoading: loading => dispatch(setLoading(loading))
-// })
 
 export default withRouter(Header)
 // export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header))

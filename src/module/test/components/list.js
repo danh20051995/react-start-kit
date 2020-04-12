@@ -7,7 +7,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { updateTodos, removeTodo } from '_store/actions'
-import { successHandle, errorHandle } from '_util/helpers'
+import { successHandle, errorHandle, ensureArray } from '_util/helpers'
 import '_style/Test.scss'
 
 class List extends Component {
@@ -17,19 +17,19 @@ class List extends Component {
   }
 
   updateStatus ({ _id, status }) {
-    let todos = this.props.todos.map(t => t._id === _id ? { ...t, status: status === 'open' ? 'close' : 'open' } : t)
+    const todos = this.props.todos.map(t => t._id === _id ? { ...t, status: status === 'open' ? 'close' : 'open' } : t)
     this.props.updateTodos(todos)
   }
 
   remove (todo) {
-    let confirm = window.confirm()
+    const confirm = window.confirm()
     if (confirm) {
       this.props.removeTodo(todo._id)
       successHandle('Remove todo successfully.')
     }
   }
 
-  render() {
+  render () {
     return (
       <div className="todo-list">
         <button onClick={() => this.props.history.push('/tests/create')} className="mb-2 btn btn-sm btn-outline-primary">Create new</button>
@@ -45,7 +45,7 @@ class List extends Component {
           </thead>
 
           <tbody>
-            {this.props.todos.map((todo, index) => {
+            {ensureArray(this.props.todos).map((todo, index) => {
               return (
                 <tr key={index}>
                   <td scope="row">{todo._id}</td>
