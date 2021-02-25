@@ -43,17 +43,7 @@ module.exports = merge(common, {
         secure: false,
         changeOrigin: true
       },
-      '/ipay': {
-        target: APP_PROXY,
-        secure: false,
-        changeOrigin: true
-      },
       '/admin': {
-        target: APP_PROXY,
-        secure: false,
-        changeOrigin: true
-      },
-      '/vnpay/': {
         target: APP_PROXY,
         secure: false,
         changeOrigin: true
