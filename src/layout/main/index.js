@@ -5,10 +5,8 @@
  * Date: 2020-04-12 23:21:53
  */
 import React, { Component } from 'react'
-import { Switch, BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import Routes from '_route'
-
-import './style.scss'
 
 class Main extends Component {
   render () {

@@ -2,17 +2,14 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-// load bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css'
-
 // load react-toastify: https://www.npmjs.com/package/react-toastify
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 import Main from '_layout/main'
 import Footer from '_layout/footer'
 import Header from '_layout/header'
-import Loading from '_layout/loading'
+import Loading from '_components/loading'
 
 import { setLoading } from '_store/actions'
 
@@ -54,4 +51,9 @@ const mapDispatchToProps = dispatch => ({
   setLoading: loading => dispatch(setLoading(loading))
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(App)
+)

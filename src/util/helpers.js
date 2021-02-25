@@ -6,35 +6,35 @@
  */
 import { toast } from 'react-toastify'
 
-const errorNotify = notify => {
+export const errorNotify = notify => {
   toast.error(notify.message, {
     position: toast.POSITION.TOP_RIGHT,
     ...notify
   })
 }
 
-const successNotify = notify => {
+export const successNotify = notify => {
   toast.success(notify.message, {
     position: toast.POSITION.TOP_RIGHT,
     ...notify
   })
 }
 
-const warnNotify = notify => {
+export const warnNotify = notify => {
   toast.warn(notify.message, {
     position: toast.POSITION.TOP_RIGHT,
     ...notify
   })
 }
 
-const infoNotify = notify => {
+export const infoNotify = notify => {
   toast.info(notify.message, {
     position: toast.POSITION.TOP_RIGHT,
     ...notify
   })
 }
 
-const apiErrorMessage = response => {
+export const apiErrorMessage = response => {
   try {
     if (response && typeof response === 'object') {
       return (response.data && (response.data.message || response.data.error || JSON.stringify(response.data, null, 2))) || response.data || response.message || response
@@ -46,50 +46,50 @@ const apiErrorMessage = response => {
   }
 }
 
-const errorHandle = error => errorNotify({ message: apiErrorMessage(error.response || error) })
+export const errorHandle = error => errorNotify({ message: apiErrorMessage(error.response || error) })
 
-const successHandle = message => successNotify({ message })
+export const successHandle = message => successNotify({ message })
 
 /**
  * @param {Number} time
  * @return {Promise}
  */
-const sleep = time => new Promise(resolve => setTimeout(resolve, time))
+export const sleep = time => new Promise(resolve => setTimeout(resolve, time))
 
 /**
  * Check input is Array or not
  * @param {Any} arr
  * @return {Boolean}
  */
-const isArray = arr => Array.isArray(arr)
+export const isArray = arr => Array.isArray(arr)
 
 /**
  * Check input is Object or not
  * @param {Any} obj
  * @return {Boolean}
  */
-const isObject = obj => obj && typeof obj === 'object' && !Array.isArray(obj)
+export const isObject = obj => obj && typeof obj === 'object' && !Array.isArray(obj)
 
 /**
  * Valid input is an Array
  * @param {Any} arr
  * @return {Array}
  */
-const ensureArray = (arr, defaultValue) => isArray(arr) ? arr : isArray(defaultValue) ? defaultValue : []
+export const ensureArray = (arr, defaultValue) => isArray(arr) ? arr : isArray(defaultValue) ? defaultValue : []
 
 /**
  * Valid input is an Object
  * @param {Any} arr
  * @return {Object}
  */
-const ensureObject = (obj, defaultValue) => isObject(obj) ? obj : isObject(defaultValue) ? defaultValue : {}
+export const ensureObject = (obj, defaultValue) => isObject(obj) ? obj : isObject(defaultValue) ? defaultValue : {}
 
 /**
  * Uppercase string
  * @param {String} string
  * @return {String}
  */
-const upperCase = string => {
+export const upperCase = string => {
   if (typeof string === 'string') {
     return string.toUpperCase()
   }
@@ -101,7 +101,7 @@ const upperCase = string => {
  * @param {String} string
  * @return {String}
  */
-const lowerCase = string => {
+export const lowerCase = string => {
   if (typeof string === 'string') {
     return string.toLowerCase()
   }
@@ -113,7 +113,7 @@ const lowerCase = string => {
  * Convert string to camel case
  * @return {String}
  */
-const camelCase = str => String(str)
+export const camelCase = str => String(str)
   .toLowerCase()
   // Replaces any - or _ characters with a space
   .replace(/[-_]+/g, ' ')
@@ -129,7 +129,7 @@ const camelCase = str => String(str)
  * Convert string to pascal case
  * @return {String}
  */
-const pascalCase = str => String(str)
+export const pascalCase = str => String(str)
   // Replaces any - or _ characters with a space
   .replace(/[-_]+/g, ' ')
   // Removes any non alphanumeric characters
@@ -151,7 +151,7 @@ const pascalCase = str => String(str)
  * @param {Number} maximum
  * @return {Number}
  */
-const rand = (minimum = 0, maximum = 999999999999) => {
+export const rand = (minimum = 0, maximum = 999999999999) => {
   return Math.floor(Math.random() * (maximum - minimum + 1)) + minimum
 }
 
@@ -160,7 +160,7 @@ const rand = (minimum = 0, maximum = 999999999999) => {
  * @param {Number} length
  * @return {String}
  */
-function randomString (length) {
+export function randomString (length) {
   length = Number(length) ? Number(length) : 10
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
   let string = ''
@@ -176,7 +176,7 @@ function randomString (length) {
  * @param {Number} fixed
  * @return {String}
  */
-const formatCurrency = (money, fixed = 0) => {
+export const formatCurrency = (money, fixed = 0) => {
   if (typeof money === 'number' || money) {
     const numbers = Number(
       String(money)
@@ -191,7 +191,7 @@ const formatCurrency = (money, fixed = 0) => {
   throw new Error('formatCurrency parameter money invalid')
 }
 
-function formatCardNumber (str, show) {
+export function formatCardNumber (str, show) {
   let newStr = ''
   for (let i = 0; i < str.length; i++) {
     if (i % 4 === 0) {
@@ -206,7 +206,7 @@ function formatCardNumber (str, show) {
   return newStr
 }
 
-function formatAccountNumber (str, show) {
+export function formatAccountNumber (str, show) {
   let newStr = ''
   for (let i = 0; i < str.length; i++) {
     if (i % 3 === 0) {
@@ -225,11 +225,11 @@ function formatAccountNumber (str, show) {
  * @param {String} a
  * @param {String} b
  */
-const alphabeticalSort = (a, b) => {
+export const alphabeticalSort = (a, b) => {
   return a.localeCompare(b)
 }
 
-const convertErrorYup = error => {
+export const convertErrorYup = error => {
   const errors = {}
   error.inner.forEach(err => {
     if (!errors[err.path]) {
@@ -237,32 +237,6 @@ const convertErrorYup = error => {
     }
   })
   return errors
-}
-
-export {
-  errorNotify,
-  successNotify,
-  warnNotify,
-  infoNotify,
-  apiErrorMessage,
-  errorHandle,
-  successHandle,
-  sleep,
-  isArray,
-  isObject,
-  ensureArray,
-  ensureObject,
-  upperCase,
-  lowerCase,
-  camelCase,
-  rand,
-  pascalCase,
-  randomString,
-  formatCurrency,
-  formatCardNumber,
-  formatAccountNumber,
-  alphabeticalSort,
-  convertErrorYup
 }
 
 export default {

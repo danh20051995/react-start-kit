@@ -2,6 +2,5 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": false,
   "editor.formatOnType": false,
-  "editor.formatOnPaste": false,
-  "i18n-ally.localesPaths": "src/i18n"
+  "editor.formatOnPaste": false
 }

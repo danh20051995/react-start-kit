@@ -5,7 +5,6 @@
  * Date: 2018-10-22 23:52:59
  */
 import React, { Component } from 'react'
-import Axios from 'axios'
 import { connect } from 'react-redux'
 import { setLoading } from '_store/actions'
 
@@ -42,4 +41,7 @@ const mapDispatchToProps = dispatch => ({
   setLoading: loading => dispatch(setLoading(loading))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home)

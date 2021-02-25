@@ -2,9 +2,25 @@
 {
   "parser": "babel-eslint",
   // "extends": [ "react-app", "plugin:prettier/recommended" ],
-  "extends": [ "standard", "standard-react" ],
+  "extends": [
+    "standard",
+    "standard-react",
+    "plugin:compat/recommended"
+  ],
   // "plugins": [ "prettier" ],
-  "env": { "es6": true },
+  "settings": {
+    "polyfills": [
+      "URL",
+      "fetch",
+      "Promise",
+      "FormData",
+      "location.hostname"
+    ]
+  },
+  "env": {
+    "browser": true,
+    "es6": true
+  },
   "rules": {
     // "semi": [ "error", "never" ],
     // "indent": [ "error", 2, {
@@ -46,7 +62,7 @@
     "no-unused-vars": "warn",
     "prefer-const": "warn",
     "jsx-quotes": [ "error", "prefer-double" ],
-    "no-console": "warn",
+    "no-console": "off",
     "camelcase": "warn",
     "indent": [ "warn", 2, {
       "SwitchCase": 1

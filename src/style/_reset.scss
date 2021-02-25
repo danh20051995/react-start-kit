@@ -1,0 +1,48 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+::-webkit-input-placeholder { /* Edge */
+  color: $NeutralGray600;
+  font-size: 14px;
+  @include typo(14px, 400, 20px);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: $NeutralGray600;
+  font-size: 14px;
+  @include typo(14px, 400, 20px);
+}
+
+::placeholder {
+  color: $NeutralGray600;
+  font-size: 14px;
+  @include typo(14px, 400, 20px);
+}
+
+button, .noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+}
+
+input {
+  border-radius: 0;
+  outline: none;
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+pre {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 24px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}

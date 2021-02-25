@@ -5,10 +5,8 @@
  * Date: 2020-04-12 23:18:55
  */
 import React, { Component } from 'react'
-import { matchPath, withRouter, BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { matchPath, withRouter, Link } from 'react-router-dom'
 import Routes from '_route'
-
-import './style.scss'
 
 class Header extends Component {
   constructor (props) {

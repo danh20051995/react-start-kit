@@ -7,7 +7,9 @@
 import { LOGIN, LOGOUT } from '_constants'
 
 export const initState = {
-  credentials: {}
+  credentials: {
+    isAuthenticated: null
+  }
 }
 
 const reducer = (state = initState, action) => {
