@@ -81,7 +81,7 @@ module.exports = merge(firstRequire, common, {
   devtool: false,
 
   entry: [
-    require.resolve('./config/polyfills'),
+    require.resolve('../config/polyfills'),
     paths.appIndexJs
   ],
 

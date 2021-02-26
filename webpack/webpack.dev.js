@@ -13,7 +13,7 @@ const common = require('./webpack.common.js')
 const paths = require('../config/paths')
 
 const APP_PORT = process.env.REACT_APP_PORT || 3000
-const APP_PROXY = process.env.REACT_APP_PROXY || 'http://localhost:3000'
+const APP_PROXY = process.env.REACT_APP_PROXY || 'http://localhost:3001'
 
 module.exports = merge(common, {
   // https://webpack.js.org/configuration/mode/#usage
@@ -70,7 +70,7 @@ module.exports = merge(common, {
     // require.resolve('webpack/hot/dev-server'),
     require.resolve('react-dev-utils/webpackHotDevClient'),
     // We ship a few polyfills by default:
-    require.resolve('./config/polyfills'),
+    require.resolve('../config/polyfills'),
     // Errors should be considered fatal in development
     require.resolve('react-error-overlay'),
     // Finally, this is your app's code:

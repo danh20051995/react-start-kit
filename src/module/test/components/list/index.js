@@ -21,10 +21,10 @@ class List extends Component {
   }
 
   remove (todo) {
-    const confirm = window.confirm()
+    const confirm = window.confirm(`Delete ${todo.name}?`)
     if (confirm) {
       this.props.removeTodo(todo._id)
-      successHandle('Remove todo successfully.')
+      successHandle('Delete todo successfully.')
     }
   }
 
