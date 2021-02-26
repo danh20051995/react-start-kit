@@ -5,6 +5,7 @@
 ## Environment variables [(dotenv)](https://www.npmjs.com/package/dotenv)
 
 Copy [.env.example](https://github.com/danh20051995/react-start-kit/blob/master/.env.example) to `.env`
+
 ``` bash
 cp .env.example .env
 ```
@@ -150,14 +151,19 @@ npm run test
 
 ## Recommended reads
 
-### React:
-  https://reactjs.org/docs\
-  https://reactjs.org/docs/strict-mode.html\
-  https://reactjs.org/docs/hooks-rules.html\
-  https://reactjs.org/docs/thinking-in-react.html
+### ES6
 
+- [http://es6-features.org](http://es6-features.org)
 
-### Style guide:
-https://google.github.io/styleguide/jsguide.html\
-https://google.github.io/styleguide/jsguide.html#naming\
-https://google.github.io/styleguide/jsguide.html#jsdoc
+### React
+
+- [https://reactjs.org/docs](https://reactjs.org/docs)
+- [https://reactjs.org/docs/strict-mode.html](https://reactjs.org/docs/strict-mode.html)
+- [https://reactjs.org/docs/hooks-rules.html](https://reactjs.org/docs/hooks-rules.html)
+- [https://reactjs.org/docs/thinking-in-react.html](https://reactjs.org/docs/thinking-in-react.html)
+
+### Style guide
+
+- [https://google.github.io/styleguide/jsguide.html](https://google.github.io/styleguide/jsguide.html)
+- [https://google.github.io/styleguide/jsguide.html#naming](https://google.github.io/styleguide/jsguide.html#naming)
+- [https://google.github.io/styleguide/jsguide.html#jsdoc](https://google.github.io/styleguide/jsguide.html#jsdoc)
