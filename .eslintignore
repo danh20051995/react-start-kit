@@ -1,6 +1,5 @@
 /node_modules
+/config
 /build
-/webpack
 /public
 /scripts
-/**/*.test.js

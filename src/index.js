@@ -1,11 +1,8 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
 
 import App from './App'
-import store from '_store'
 import registerServiceWorker from './registerServiceWorker'
 
 // import multiple languages
@@ -18,9 +15,9 @@ import '_style'
 // import '_util/firebase' // uncomment to use
 
 ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <App/>
-    </BrowserRouter>
-  </Provider>, document.getElementById('root'))
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+)
 registerServiceWorker()

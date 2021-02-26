@@ -11,8 +11,8 @@ const ManifestPlugin = require('webpack-manifest-plugin')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const InterpolateHtmlPlugin = require('interpolate-html-plugin')
 
-const paths = require('./config/paths')
-const getClientEnvironment = require('./config/env')
+const paths = require('../config/paths')
+const getClientEnvironment = require('../config/env')
 
 const publicUrl = ''
 const env = getClientEnvironment(publicUrl)

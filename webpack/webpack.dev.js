@@ -10,7 +10,7 @@ const path = require('path')
 const merge = require('webpack-merge')
 const openBrowser = require('react-dev-utils/openBrowser')
 const common = require('./webpack.common.js')
-const paths = require('./config/paths')
+const paths = require('../config/paths')
 
 const APP_PORT = process.env.REACT_APP_PORT || 3000
 const APP_PROXY = process.env.REACT_APP_PROXY || 'http://localhost:3000'

@@ -18,7 +18,7 @@ const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
-const paths = require('./config/paths')
+const paths = require('../config/paths')
 const common = require('./webpack.common.js')
 
 const firstRequire = {

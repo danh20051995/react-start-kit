@@ -29,13 +29,16 @@
     "ie >= 11"
   ],
   "pre-commit": [
-    "eslint"
+    "eslint",
+    "test"
   ],
   "scripts": {
     "start": "webpack-dev-server --config webpack/webpack.dev.js",
     "build": "webpack --mode=development --config webpack/webpack.prod.js",
     "eslint": "eslint .",
-    "eslint-fix": "eslint . --fix"
+    "eslint-fix": "eslint . --fix",
+    "test": "node test.js --watchAll=false",
+    "test-dev": "node test.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -65,8 +68,12 @@
     "@babel/plugin-transform-runtime": "^7.13.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.3",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.6",
+    "babel-preset-react-app": "^10.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^6.1.1",
     "copy-webpack-plugin": "^5.1.1",
@@ -93,10 +100,15 @@
     "import-glob-loader": "^1.1.0",
     "interpolate-html-plugin": "^3.0.0",
     "is-wsl": "^2.1.1",
+    "jest": "^26.6.3",
+    "jest-circus": "^26.6.3",
+    "jest-resolve": "^26.6.2",
+    "jest-watch-typeahead": "^0.6.1",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-safe-parser": "^5.0.2",
     "pre-commit": "^1.2.2",
     "promise.allsettled": "^1.0.4",
+    "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^3.1.3",
     "react-error-overlay": "^1.0.7",
     "sass": "^1.32.8",
@@ -112,5 +124,69 @@
     "webpack-dev-server": "^3.10.3",
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-merge": "^4.2.2"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!src/**/*.d.ts"
+    ],
+    "setupFiles": [
+      "react-app-polyfill/jsdom"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+      "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+    ],
+    "testEnvironment": "jsdom",
+    "testRunner": "/Users/Danh/Desktop/project-name/node_modules/jest-circus/runner.js",
+    "transform": {
+      "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
+      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+      "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "modulePaths": [],
+    "moduleNameMapper": {
+      "^react-native$": "react-native-web",
+      "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
+      "^_api(.*)$": "<rootDir>/src/api$1",
+      "^_util(.*)$": "<rootDir>/src/util$1",
+      "^_i18n(.*)$": "<rootDir>/src/i18n$1",
+      "^_hooks(.*)$": "<rootDir>/src/hooks$1",
+      "^_style(.*)$": "<rootDir>/src/style$1",
+      "^_store(.*)$": "<rootDir>/src/store$1",
+      "^_route(.*)$": "<rootDir>/src/route$1",
+      "^_layout(.*)$": "<rootDir>/src/layout$1",
+      "^_module(.*)$": "<rootDir>/src/module$1",
+      "^_static(.*)$": "<rootDir>/public/static$1",
+      "^_constants(.*)$": "<rootDir>/src/constants$1",
+      "^_components(.*)$": "<rootDir>/src/components$1"
+    },
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ],
+    "resetMocks": true
   }
 }

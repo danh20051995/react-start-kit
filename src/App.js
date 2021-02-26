@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
+import { connect, Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router-dom'
+import store from '_store'
 
 // load react-toastify: https://www.npmjs.com/package/react-toastify
 import { ToastContainer } from 'react-toastify'
@@ -51,9 +52,15 @@ const mapDispatchToProps = dispatch => ({
   setLoading: loading => dispatch(setLoading(loading))
 })
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(App)
+const AppWithStore = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)
+
+export default () => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <AppWithStore/>
+    </BrowserRouter>
+  </Provider>
 )
