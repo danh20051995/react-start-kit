@@ -13,7 +13,6 @@ class List extends Component {
   constructor (props) {
     super(props)
     this.state = {}
-    console.log(props)
   }
 
   updateStatus ({ _id, status }) {
@@ -45,22 +44,20 @@ class List extends Component {
           </thead>
 
           <tbody>
-            {ensureArray(this.props.todos).map((todo, index) => {
-              return (
-                <tr key={index}>
-                  <td scope="row">{todo._id}</td>
-                  <td>{todo.name}</td>
-                  <td>
-                    <a href="javascript:void(0)" onClick={() => this.updateStatus(todo)} className={todo.status === 'open' ? 'badge badge-primary' : 'badge badge-success'}>{todo.status}</a>
-                  </td>
-                  <td>{todo.description}</td>
-                  <td className="oneline-text">
-                    <button onClick={() => this.props.history.push('/tests/' + todo._id)} className="btn btn-sm btn-outline-info">Edit</button>
-                    <button onClick={() => this.remove(todo)} className="ml-1 btn btn-sm btn-outline-danger">Delete</button>
-                  </td>
-                </tr>
-              )
-            })}
+            {ensureArray(this.props.todos).map((todo, index) => (
+              <tr key={index}>
+                <td scope="row">{todo._id}</td>
+                <td>{todo.name}</td>
+                <td>
+                  <a onClick={() => this.updateStatus(todo)} className={todo.status === 'open' ? 'noselect pointer badge badge-primary' : 'noselect pointer badge badge-success'}>{todo.status}</a>
+                </td>
+                <td>{todo.description}</td>
+                <td className="oneline-text">
+                  <button onClick={() => this.props.history.push('/tests/' + todo._id)} className="btn btn-sm btn-outline-info">Edit</button>
+                  <button onClick={() => this.remove(todo)} className="ml-1 btn btn-sm btn-outline-danger">Delete</button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
