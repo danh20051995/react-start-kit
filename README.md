@@ -19,8 +19,8 @@ npm install
 # serve with hot reload at localhost:<port> | config .env REACT_APP_PORT default 3000
 npm run start
 
-# start development with docker | replace env localhost to host.docker.internal
-npm run start:docker
+# start development with docker | replace .env.REACT_APP_PROXY localhost to host.docker.internal
+npm run docker:start
 
 # build for production with minification
 npm run build

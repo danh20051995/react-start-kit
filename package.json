@@ -33,7 +33,9 @@
     "test"
   ],
   "scripts": {
-    "start:docker": "docker-compose --env-file ./.env up",
+    "docker:up": "docker-compose --env-file ./.env up --no-start",
+    "docker:start": "docker-compose start",
+    "predocker:start": "npm run docker:up",
     "start": "webpack-dev-server --config webpack/webpack.dev.js",
     "build": "webpack --mode=development --config webpack/webpack.prod.js",
     "eslint": "eslint .",
