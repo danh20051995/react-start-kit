@@ -13,7 +13,7 @@ import axios from 'axios'
  */
 const store = ({ _id, ...payload }) => {
   const method = _id ? 'put' : 'post'
-  const path = _id ? '/api/todos/' + _id : '/api/todos'
+  const path = _id ? '/api/todo/' + _id : '/api/todo'
   return axios[method](path, payload)
 }
 
@@ -22,28 +22,28 @@ const store = ({ _id, ...payload }) => {
  * @param {Object} params
  * @return {Promise}
  */
-const status = ({ _id, status }) => axios.put('/api/todos/' + _id + '/status', { status })
+const status = ({ _id, status }) => axios.put('/api/todo/' + _id + '/status', { status })
 
 /**
  * Call API get todo detail
  * @param {Object} params
  * @return {Promise}
  */
-const getItem = ({ _id, ...params }) => axios.get('/api/todos/' + _id, { params })
+const getItem = ({ _id, ...params }) => axios.get('/api/todo/' + _id, { params })
 
 /**
  * Call API remove todo detail
  * @param {Object} params
  * @return {Promise}
  */
-const remove = ({ _id, ...params }) => axios.delete('/api/todos/' + _id, { params })
+const remove = ({ _id, ...params }) => axios.delete('/api/todo/' + _id, { params })
 
 /**
  * Call API get list todo
  * @param {Object} params
  * @return {Promise}
  */
-const getItems = (params = {}) => axios.get('/api/todos', { params })
+const getItems = (params = {}) => axios.get('/api/todo', { params })
 
 export default {
   store,

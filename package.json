@@ -33,6 +33,7 @@
     "test"
   ],
   "scripts": {
+    "start:docker": "docker-compose --env-file ./.env up",
     "start": "webpack-dev-server --config webpack/webpack.dev.js",
     "build": "webpack --mode=development --config webpack/webpack.prod.js",
     "eslint": "eslint .",
@@ -145,7 +146,7 @@
       "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
     ],
     "testEnvironment": "jsdom",
-    "testRunner": "/Users/Danh/Desktop/project-name/node_modules/jest-circus/runner.js",
+    "testRunner": "<rootDir>/node_modules/jest-circus/runner.js",
     "transform": {
       "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
