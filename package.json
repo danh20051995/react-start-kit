@@ -1,9 +1,8 @@
 {
   "name": "react-start-kit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
-  "proxy": "http://localhost:3001",
-  "description": "Simple react application",
+  "description": "A react project template",
   "author": "danh.danh20051995@gmail.com",
   "repository": {
     "type": "git",
