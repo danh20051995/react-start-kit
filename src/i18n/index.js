@@ -10,7 +10,7 @@ import HttpApi from 'i18next-http-backend'
 import ChainedBackend from 'i18next-chained-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import LocalStorageBackend from 'i18next-localstorage-backend'
-import resources from './resources'
+import resources from '@/i18n/resources'
 
 const _isProduction = process.env.NODE_ENV === 'production'
 const _cachePrefix = 'i18next_res_'

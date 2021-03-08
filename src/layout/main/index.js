@@ -6,7 +6,7 @@
  */
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Routes from '_route'
+import Routes from '@/route'
 
 class Main extends Component {
   render () {

@@ -5,8 +5,8 @@
  * Date: 2020-03-24 20:44:52
  */
 import qs from 'qs'
-import routes from '_route'
-import { ensureObject, alphabeticalSort } from '_util/helpers'
+import routes from '@/route'
+import { ensureObject, alphabeticalSort } from '@/util/helpers'
 
 /**
  * Replace route parameters with params.

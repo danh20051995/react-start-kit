@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
 import { connect, Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
-import store from '_store'
+import store from '@/store'
 
 // load react-toastify: https://www.npmjs.com/package/react-toastify
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-import Main from '_layout/main'
-import Footer from '_layout/footer'
-import Header from '_layout/header'
-import Loading from '_components/loading'
+import Main from '@/layout/main'
+import Footer from '@/layout/footer'
+import Header from '@/layout/header'
+import Loading from '@/components/loading'
 
-import { setLoading } from '_store/actions'
+import { setLoading } from '@/store/actions'
+// import Logo from '_static/logo.png'
 
 class App extends Component {
   constructor (props) {
@@ -60,6 +61,7 @@ const AppWithStore = connect(
 export default () => (
   <Provider store={store}>
     <BrowserRouter>
+      {/* <img src={Logo}/> */}
       <AppWithStore/>
     </BrowserRouter>
   </Provider>

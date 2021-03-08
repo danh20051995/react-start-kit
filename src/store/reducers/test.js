@@ -1,4 +1,4 @@
-import helpers from '_util/helpers'
+import helpers from '@/util/helpers'
 
 export const initState = {
   todos: Array.from(new Array(10), () => ({

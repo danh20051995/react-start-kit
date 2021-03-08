@@ -1,0 +1,26 @@
+/**
+ * File name: src/hooks/useQueryParam.js
+ * Created by Visual studio code
+ * User: Danh Le / danh.danh20051995@gmail.com
+ * Date: 2021-03-08 14:14:52
+ */
+import qs from 'qs'
+import { useHistory } from 'react-router'
+import { useState, useEffect } from 'react'
+import { compareObj } from '@/util/helpers'
+
+export function useQueryParam (props) {
+  const history = useHistory()
+  const [ queryParams, setQueryParams ] = useState(qs.parse(history.location.search.replace(/^\?+/, '')))
+
+  useEffect(() => {
+    const newParams = qs.parse(history.location.search.replace(/^\?+/, ''))
+    if (!compareObj(queryParams, newParams)) {
+      setQueryParams(newParams)
+    }
+  }, [ history.location.search ])
+
+  return queryParams
+}
+
+export default useQueryParam

@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { createBrowserHistory } from 'history'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { routerMiddleware } from 'connected-react-router'
-import reducers from '_store/reducers'
+import reducers from '@/store/reducers'
 
 // https://github.com/reactjs/react-router-redux#what-if-i-want-to-issue-navigation-events-via-redux-actions
 const browserHistory = createBrowserHistory()

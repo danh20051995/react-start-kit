@@ -6,8 +6,8 @@
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { updateTodos, removeTodo } from '_store/actions/test'
-import { successHandle, ensureArray } from '_util/helpers'
+import { updateTodos, removeTodo } from '@/store/actions/test'
+import { successHandle, ensureArray } from '@/util/helpers'
 
 class List extends Component {
   constructor (props) {

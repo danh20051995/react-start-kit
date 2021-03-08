@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 // import renderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
-import store from '_store'
+import store from '@/store'
 
 import Component from './'
 

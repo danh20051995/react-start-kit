@@ -6,7 +6,7 @@
  */
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setLoading } from '_store/actions'
+import { setLoading } from '@/store/actions'
 
 class Home extends Component {
   async componentDidMount () {}

@@ -107,18 +107,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      _api: path.resolve(__dirname, '../src/api'),
-      _util: path.resolve(__dirname, '../src/util'),
-      _i18n: path.resolve(__dirname, '../src/i18n'),
-      _hooks: path.resolve(__dirname, '../src/hooks'),
-      _style: path.resolve(__dirname, '../src/style'),
-      _store: path.resolve(__dirname, '../src/store'),
-      _route: path.resolve(__dirname, '../src/route'),
-      _layout: path.resolve(__dirname, '../src/layout'),
-      _module: path.resolve(__dirname, '../src/module'),
       _static: path.resolve(__dirname, '../public/static'),
-      _constants: path.resolve(__dirname, '../src/constants'),
-      _components: path.resolve(__dirname, '../src/components')
+      '@': path.resolve(__dirname, '../src')
     }
   },
   plugins: [

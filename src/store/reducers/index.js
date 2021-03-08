@@ -13,8 +13,8 @@ import { combineReducers } from 'redux'
 import { createBrowserHistory } from 'history'
 
 /* import main reducer load sync */
-import auth from '_store/reducers/auth'
-import test from '_store/reducers/test'
+import auth from '@/store/reducers/auth'
+import test from '@/store/reducers/test'
 
 const initialState = {
   loading: false

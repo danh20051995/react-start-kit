@@ -5,9 +5,9 @@
  * Date: 2019-01-16 22:14:33
  */
 // import React, { Component } from 'react'
-import Home from '_module/core/components/home'
-import Forbidden from '_module/core/components/403'
-import Notfound from '_module/core/components/404'
+import Home from '@/module/core/components/home'
+import Forbidden from '@/module/core/components/403'
+import Notfound from '@/module/core/components/404'
 export default [
   {
     label: 'Home',

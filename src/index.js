@@ -6,13 +6,13 @@ import App from './App'
 import registerServiceWorker from './registerServiceWorker'
 
 // import multiple languages
-import '_i18n' // uncomment to use
+import '@/i18n' // uncomment to use
 
 // import CSS, scss
-import '_style'
+import '@/style'
 
 // load firebase
-// import '_util/firebase' // uncomment to use
+// import '@/util/firebase' // uncomment to use
 
 ReactDOM.render(
   <React.StrictMode>

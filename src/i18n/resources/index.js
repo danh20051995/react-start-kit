@@ -4,8 +4,8 @@
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2020-04-07 07:44:54
  */
-import languages from '_i18n/languages'
-import { ensureObject } from '_util/helpers'
+import languages from '@/i18n/languages'
+import { ensureObject } from '@/util/helpers'
 
 import home from './home.json'
 // ... import more modules

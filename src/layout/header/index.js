@@ -6,7 +6,7 @@
  */
 import React, { Component } from 'react'
 import { matchPath, withRouter, Link } from 'react-router-dom'
-import Routes from '_route'
+import Routes from '@/route'
 
 class Header extends Component {
   constructor (props) {
