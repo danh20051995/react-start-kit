@@ -1,20 +1,27 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-// import renderer from 'react-test-renderer'
-import { Provider } from 'react-redux'
-import store from '@/store'
+import { mount } from 'enzyme'
+import _i18n from '@/i18n'
 
+import TestContainer from '@/testContainer'
 import Component from './home'
 
 describe('Home page', () => {
-  it('should display text "Home page"', () => {
-    const div = document.createElement('div')
-    ReactDOM.render(
-      <Provider store={store}>
+  let wrapper
+
+  beforeEach(() => {
+    wrapper = mount(
+      <TestContainer>
         <Component/>
-      </Provider>,
-      div
+      </TestContainer>
     )
-    expect(div.querySelector('.home-page').textContent).toBe('Home page')
+  })
+
+  afterEach(() => {
+    wrapper.unmount()
+  })
+
+  it('should display text "home.welcome"', () => {
+    expect(wrapper.find('.home-page').exists()).toBe(true)
+    expect(wrapper.find('.home-page').text()).toBe(_i18n.t('home.welcome'))
   })
 })

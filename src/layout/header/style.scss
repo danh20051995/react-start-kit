@@ -4,23 +4,32 @@
   ul {
     margin: 0;
     padding: 0;
+    display: flex;
     list-style-type: none;
     li {
-      display: inline-block;
       a {
         color: black;
         margin: 0 4px;
         padding: 15px 10px;
         display: inline-block;
-        opacity: .5;
+        opacity: 0.5;
         font-weight: 600;
         text-decoration: none;
         &.active {
           background-color: #e6e6e6;
         }
-        &:hover, &.active {
+        &:hover,
+        &.active {
           opacity: 1;
         }
+      }
+      &.languages {
+        cursor: pointer;
+        margin: 2px 4px 2px auto;
+        overflow: hidden;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
       }
     }
   }

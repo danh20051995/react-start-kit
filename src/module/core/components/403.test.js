@@ -1,20 +1,27 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-// import renderer from 'react-test-renderer'
-import { Provider } from 'react-redux'
-import store from '@/store'
+import { mount } from 'enzyme'
+import _i18n from '@/i18n'
 
+import TestContainer from '@/testContainer'
 import Component from './403'
 
 describe('Error 403', () => {
-  it('should display text "Permission denied"', () => {
-    const div = document.createElement('div')
-    ReactDOM.render(
-      <Provider store={store}>
+  let wrapper
+
+  beforeEach(() => {
+    wrapper = mount(
+      <TestContainer>
         <Component/>
-      </Provider>,
-      div
+      </TestContainer>
     )
-    expect(div.querySelector('.forbidden').textContent).toBe('Permission denied')
+  })
+
+  afterEach(() => {
+    wrapper.unmount()
+  })
+
+  it('should display text "error.permissionDenied"', () => {
+    expect(wrapper.find('.error-text').exists()).toBe(true)
+    expect(wrapper.find('.error-text').text()).toBe(_i18n.t('error.permissionDenied'))
   })
 })

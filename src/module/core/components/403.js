@@ -5,10 +5,13 @@
  * Date: 2018-10-23 23:01:37
  */
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-const Forbidden = props => {
+export const Forbidden = props => {
+  const { t } = useTranslation()
+
   return (
-    <div className="forbidden">Permission denied</div>
+    <div className="error-text">{t('error.permissionDenied')}</div>
   )
 }
 

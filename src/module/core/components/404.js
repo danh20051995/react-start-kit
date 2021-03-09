@@ -5,10 +5,13 @@
  * Date: 2018-10-23 00:13:04
  */
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-const Notfound = props => {
+export const Notfound = props => {
+  const { t } = useTranslation()
+
   return (
-    <div className="not-found">Page not found</div>
+    <div className="error-text">{t('error.pageNotFound')}</div>
   )
 }
 

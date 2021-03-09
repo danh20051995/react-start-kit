@@ -43,7 +43,7 @@ export const i18nextHttpApiOption = {
 export const initOptions = {
   resources, // use resource without fetch via XHR
   // lng: 'vi', // force initial language
-  debug: !_isProduction,
+  debug: !_isProduction && process.env.NODE_ENV !== 'test',
   fallbackLng: 'vi',
   keySeparator: false,
 

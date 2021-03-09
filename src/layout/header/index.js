@@ -4,65 +4,63 @@
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2020-04-12 23:18:55
  */
-import React, { Component } from 'react'
-import { matchPath, withRouter, Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { matchPath, Link, useLocation } from 'react-router-dom'
 import Routes from '@/route'
+import { metaData as langsMeta, languages as langs } from '@/i18n/languages'
 
-class Header extends Component {
-  constructor (props) {
-    super(props)
-    this.activeClassName = this.activeClassName.bind(this)
-  }
+import Avatar from 'react-avatar'
 
-  activeClassName (path) {
-    const isActive = matchPath(this.props.location.pathname, path)
+export const Header = props => {
+  const location = useLocation()
+  const { i18n } = useTranslation()
+  const [ lang, setLang ] = useState(i18n.language ? i18n.language.substring(0, 2) : langs[0])
+
+  const activeClassName = path => {
+    const isActive = matchPath(location.pathname, path)
     return isActive && isActive.isExact ? 'active' : ''
   }
 
-  render () {
-    return (
-      <header id="header" className="header">
-        <ul style={{ listStyleType: 'none', padding: 0 }}>
-          {/* <li>
-            <Link to="/" className={this.activeClassName('/')}>Home</Link>
-          </li>
-          <li>
-            <Link to="/bubblegum" className={this.activeClassName('/bubblegum')}>Bubblegum</Link>
-          </li>
-          <li>
-            <Link to="/shoelaces" className={this.activeClassName('/shoelaces')}>Shoelaces</Link>
-          </li> */}
+  useEffect(() => {
+    // axios.defaults.headers.common.lang = lang
 
-          {Routes.map((route, index) => {
-            if (route.label) {
-              return (
-                <li key={index}>
-                  <Link to={route.path} className={this.activeClassName(route.path)}>{route.label}</Link>
-                </li>
-              )
-            }
-          })}
+    i18n
+      .changeLanguage(lang)
+      .then(() => {
+        window.document.body.parentNode.setAttribute('lang', lang)
+      })
+      .catch(error => {
+        console.log({ error })
+      })
+  }, [ lang ])
 
-          {/* {Routes.map((route, index) => (
-          // You can render a <Route> in as many places
-          // as you want in your app. It will render along
-          // with any other <Route>s that also match the URL.
-          // So, a sidebar or breadcrumbs or anything else
-          // that requires you to render multiple things
-          // in multiple places at the same URL is nothing
-          // more than multiple <Route>s.
-          <Route
-            key={index}
-            path={route.path}
-            exact={route.exact}
-            component={route.sidebar}
+  return (
+    <header id="header" className="header">
+      <ul className="noselect">
+        {Routes.map((route, index) => {
+          if (route.label) {
+            return (
+              <li key={index}>
+                <Link to={route.path} className={activeClassName(route.path)}>{route.label}</Link>
+              </li>
+            )
+          }
+        })}
+
+        <li
+          className="languages"
+          onClick={() => setLang(lang === langs[0] ? langs[1] : langs[0])}
+        >
+          <Avatar
+            size={50}
+            color="#fff"
+            src={langsMeta[lang].icon}
           />
-        ))} */}
-        </ul>
-      </header>
-    )
-  }
+        </li>
+      </ul>
+    </header>
+  )
 }
 
-export default withRouter(Header)
-// export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header))
+export default Header

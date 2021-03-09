@@ -1,20 +1,27 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-// import renderer from 'react-test-renderer'
-import { Provider } from 'react-redux'
-import store from '@/store'
+import { mount } from 'enzyme'
+import _i18n from '@/i18n'
 
+import TestContainer from '@/testContainer'
 import Component from './404'
 
 describe('Error 404', () => {
-  it('should display text "Page not found"', () => {
-    const div = document.createElement('div')
-    ReactDOM.render(
-      <Provider store={store}>
+  let wrapper
+
+  beforeEach(() => {
+    wrapper = mount(
+      <TestContainer>
         <Component/>
-      </Provider>,
-      div
+      </TestContainer>
     )
-    expect(div.querySelector('.not-found').textContent).toBe('Page not found')
+  })
+
+  afterEach(() => {
+    wrapper.unmount()
+  })
+
+  it('should display text "error.pageNotFound"', () => {
+    expect(wrapper.find('.error-text').exists()).toBe(true)
+    expect(wrapper.find('.error-text').text()).toBe(_i18n.t('error.pageNotFound'))
   })
 })

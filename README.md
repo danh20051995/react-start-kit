@@ -170,3 +170,7 @@ npm run test
 - [https://google.github.io/styleguide/jsguide.html](https://google.github.io/styleguide/jsguide.html)
 - [https://google.github.io/styleguide/jsguide.html#naming](https://google.github.io/styleguide/jsguide.html#naming)
 - [https://google.github.io/styleguide/jsguide.html#jsdoc](https://google.github.io/styleguide/jsguide.html#jsdoc)
+
+### Testing
+
+- [Difference between Shallow, Mount and render of Enzyme](https://gist.github.com/fokusferit/e4558d384e4e9cab95d04e5f35d4f913)

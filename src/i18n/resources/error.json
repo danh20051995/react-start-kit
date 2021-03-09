@@ -1,0 +1,10 @@
+{
+  "en": {
+    "pageNotFound": "Page not found",
+    "permissionDenied": "Permission denied"
+  },
+  "vi": {
+    "pageNotFound": "Trang không tìm thấy",
+    "permissionDenied": "Quyền bị từ chối"
+  }
+}

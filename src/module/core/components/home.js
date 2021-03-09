@@ -4,29 +4,15 @@
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2018-10-22 23:52:59
  */
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { setLoading } from '@/store/actions'
+import React from 'react'
+import { useTranslation } from 'react-i18next'
 
-class Home extends Component {
-  async componentDidMount () {}
+export const Home = props => {
+  const { t } = useTranslation()
 
-  render () {
-    return (
-      <div className="home-page">Home page</div>
-    )
-  }
+  return (
+    <div className="home-page">{t('home.welcome')}</div>
+  )
 }
 
-const mapStateToProps = state => ({
-  loading: state.loading
-})
-
-const mapDispatchToProps = dispatch => ({
-  setLoading: loading => dispatch(setLoading(loading))
-})
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Home)
+export default Home

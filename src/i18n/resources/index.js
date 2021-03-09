@@ -4,56 +4,41 @@
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2020-04-07 07:44:54
  */
-import languages from '@/i18n/languages'
 import { ensureObject } from '@/util/helpers'
-
+import { languages as langs } from '@/i18n/languages'
+import error from './error.json'
 import home from './home.json'
-// ... import more modules
 
-// initial resources
-const resources = {
-  en: {
-    translation: {
-      home_page: 'Home page',
-      page_not_found: 'Page not found',
-      permission_denied: 'Permission denied'
-    }
-  },
-  vi: {
-    translation: {
-      home_page: 'Trang chủ',
-      page_not_found: 'Trang không tìm thấy',
-      permission_denied: 'Quyền bị từ chối'
-    }
-  }
-}
-
-// merge resources
+// auto load resources
 const modules = {
+  error,
   home
-  // ...modules
 }
 
-const langs = Object.keys(languages)
-const defaultDefined = langs.reduce((result, lang) => ({
+const resourceTemplate = langs.reduce((result, lang) => ({
   ...result,
-  [lang]: {}
+  [lang]: { translation: {} }
 }), {})
 
-Object
+const resources = Object
   .keys(modules)
-  .map(mod => {
-    const modResource = Object.assign({}, defaultDefined, ensureObject(modules[mod]))
+  .reduce((result, mod) => {
+    const modResource = Object.assign({}, resourceTemplate, ensureObject(modules[mod]))
 
     for (const lang of langs) {
-      Object.assign(
-        resources[lang].translation,
-        Object.keys(modResource[lang]).reduce((result, key) => ({
+      const flatKeys = Object
+        .keys(modResource[lang])
+        .reduce((result, key) => ({
           ...result,
           [`${mod}.${key}`]: modResource[lang][key]
         }), {})
+      Object.assign(
+        result[lang].translation,
+        flatKeys
       )
     }
-  })
+
+    return result
+  }, resourceTemplate)
 
 export default resources
