@@ -12,9 +12,8 @@ import { connectRouter } from 'connected-react-router'
 import { combineReducers } from 'redux'
 import { createBrowserHistory } from 'history'
 
-/* import main reducer load sync */
-import auth from '@/store/reducers/auth'
-import test from '@/store/reducers/test'
+// eslint-disable-next-line
+import Reducers from './[!index]*.js' // autoload all reducer except index.js
 
 const initialState = {
   loading: false
@@ -33,8 +32,12 @@ const history = createBrowserHistory()
 const reducers = combineReducers({
   router: connectRouter(history),
   root,
-  auth,
-  test
+  ...Reducers.reduce(
+    (reducers, { name, reducer }) => ({
+      ...reducers,
+      [name]: reducer
+    }), {}
+  )
 })
 
 export default reducers

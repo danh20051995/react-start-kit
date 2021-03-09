@@ -8,6 +8,7 @@
 import Home from '@/module/core/components/home'
 import Forbidden from '@/module/core/components/403'
 import Notfound from '@/module/core/components/404'
+
 export default [
   {
     label: 'Home',

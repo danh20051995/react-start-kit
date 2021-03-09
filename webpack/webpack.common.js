@@ -25,13 +25,18 @@ module.exports = {
         loader: 'html-loader'
       },
       {
-        enforce: 'pre',
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'eslint-loader',
-        options: {
-          configFile: path.join(__dirname, '../.eslintrc')
-        }
+        enforce: 'pre',
+        use: [
+          { loader: 'webpack-import-glob-loader' },
+          {
+            loader: 'eslint-loader',
+            options: {
+              configFile: path.join(__dirname, '../.eslintrc')
+            }
+          }
+        ]
       },
       {
         test: /\.(js|jsx)$/,
@@ -48,7 +53,7 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         enforce: 'pre',
-        loader: 'import-glob-loader'
+        loader: 'webpack-import-glob-loader'
       },
       {
         test: /\.s[ac]ss$/i,

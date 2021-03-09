@@ -9,7 +9,8 @@ export const initState = {
   }))
 }
 
-const reducer = (state = initState, action) => {
+export const name = 'test'
+export const reducer = (state = initState, action) => {
   switch (action.type) {
     case 'UPDATE_TODOS':
       return { ...state, todos: action.value }
@@ -21,5 +22,3 @@ const reducer = (state = initState, action) => {
       return state
   }
 }
-
-export default reducer

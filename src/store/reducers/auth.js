@@ -12,7 +12,8 @@ export const initState = {
   }
 }
 
-const reducer = (state = initState, action) => {
+export const name = 'auth'
+export const reducer = (state = initState, action) => {
   switch (action.type) {
     case LOGIN:
       state = {
@@ -32,5 +33,3 @@ const reducer = (state = initState, action) => {
 
   return state
 }
-
-export default reducer
