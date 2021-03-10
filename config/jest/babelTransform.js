@@ -27,3 +27,5 @@ module.exports = babelJestGlobTransform.createTransformer({
   babelrc: false,
   configFile: false
 })
+
+module.exports.createTransformer = babelJestGlobTransform.createTransformer
