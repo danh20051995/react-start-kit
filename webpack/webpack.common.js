@@ -29,7 +29,7 @@ module.exports = {
         exclude: /node_modules/,
         enforce: 'pre',
         use: [
-          { loader: 'webpack-import-glob-loader' },
+          { loader: 'webpack-glob-loader' },
           {
             loader: 'eslint-loader',
             options: {
@@ -53,7 +53,7 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         enforce: 'pre',
-        loader: 'webpack-import-glob-loader'
+        loader: 'webpack-glob-loader'
       },
       {
         test: /\.s[ac]ss$/i,
