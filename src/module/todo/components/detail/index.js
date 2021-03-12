@@ -9,7 +9,7 @@ import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { setLoading } from '@/store/actions'
 import TodoAPI from '@/api/todo'
-import { successHandle, errorHandle } from '@/util/helpers'
+import { successHandle, errorHandle } from '@/utils/helpers'
 
 class Detail extends Component {
   constructor (props) {

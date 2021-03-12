@@ -129,7 +129,7 @@ npm run test
    |  |  |     └── style.scss     # component test scripts
    │  │  └── route.js     # module routes
    │  └── ...
-   ├── route  # react-router configuration
+   ├── router # react-router configuration
    ├── store  # redux configuration
    |  ├── index.js
    |  ├── actions
@@ -146,7 +146,7 @@ npm run test
    |  ├── _size.scss
    |  ├── _typography.scss
    |  └── index.js
-   └── util   # utility, helpers, custom, loader, ...
+   └── utils  # utility, helpers, custom, loader, ...
       ├── firebase.js
       ├── helpers.js
       └── reCAPTCHA.js

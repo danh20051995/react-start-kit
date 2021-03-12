@@ -1,12 +1,12 @@
 /**
- * File name: src\routes\generate.js
+ * File name: src\router\generate.js
  * Created by Visual studio code
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2020-03-24 20:44:52
  */
 import qs from 'qs'
-import routes from '@/route'
-import { ensureObject, alphabeticalSort } from '@/util/helpers'
+import { routes } from '@/router'
+import { ensureObject, alphabeticalSort } from '@/utils/helpers'
 
 /**
  * Replace route parameters with params.
@@ -27,7 +27,7 @@ const getPathURL = (routePath, params) => {
  * Generate route path with parameters by name | path
  * @return {String}
  */
-const generate = function (options, queryParams) {
+export const generate = function (options, queryParams) {
   let match = options
   let params = {}
   if (Array.isArray(options)) {
@@ -50,7 +50,5 @@ const generate = function (options, queryParams) {
 
   throw new Error(`Route '${match}' not exists.`)
 }
-
-export { generate }
 
 export default generate

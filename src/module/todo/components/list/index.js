@@ -9,7 +9,7 @@ import { connect } from 'react-redux'
 import qs from 'qs'
 import { setLoading } from '@/store/actions'
 import TodoAPI from '@/api/todo'
-import helpers, { successHandle, errorHandle } from '@/util/helpers'
+import helpers, { successHandle, errorHandle } from '@/utils/helpers'
 import Pagination from '@/components/pagination'
 
 class List extends Component {

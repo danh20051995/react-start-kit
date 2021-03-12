@@ -9,13 +9,13 @@ import 'react-toastify/dist/ReactToastify.css'
 // import multiple languages
 import '@/i18n' // uncomment to use
 
-import '@/util/axios.config'
+import '@/utils/axios.config'
 
 // import css, scss
 import '@/style'
 
 // load firebase
-// import '@/util/firebase' // uncomment to use
+// import '@/utils/firebase' // uncomment to use
 
 import store from '@/store'
 import { setLoading } from '@/store/actions'

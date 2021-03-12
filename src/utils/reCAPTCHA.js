@@ -1,5 +1,5 @@
 /**
- * File name: src\util\reCAPTCHA.js
+ * File name: src\utils\reCAPTCHA.js
  * Created by Visual studio code
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2020-04-07 21:57:35

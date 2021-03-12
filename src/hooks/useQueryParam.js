@@ -7,7 +7,7 @@
 import qs from 'qs'
 import { useHistory } from 'react-router'
 import { useState, useEffect } from 'react'
-import { compareObj } from '@/util/helpers'
+import { compareObj } from '@/utils/helpers'
 
 export function useQueryParam (props) {
   const history = useHistory()

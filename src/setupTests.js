@@ -7,6 +7,6 @@ import Enzyme from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
 import '@/i18n'
-import '@/util/axios.config'
+import '@/utils/axios.config'
 
 Enzyme.configure({ adapter: new Adapter() })

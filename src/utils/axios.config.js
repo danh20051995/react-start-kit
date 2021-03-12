@@ -1,5 +1,5 @@
 /**
- * File name: src/util/axios.config.js
+ * File name: src/utils/axios.config.js
  * Created by Visual studio code
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2021-03-09 18:38:11

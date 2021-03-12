@@ -8,7 +8,7 @@ import React, { Component } from 'react'
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux'
 import { updateTodos, addTodo } from '@/store/actions/test'
-import helpers from '@/util/helpers'
+import helpers from '@/utils/helpers'
 
 class Detail extends Component {
   constructor (props) {

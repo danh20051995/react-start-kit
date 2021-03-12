@@ -7,7 +7,7 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { matchPath, Link, useLocation } from 'react-router-dom'
-import Routes from '@/route'
+import { routes } from '@/router'
 import { metaData as langsMeta, languages as langs } from '@/i18n/languages'
 
 import Avatar from 'react-avatar'
@@ -38,7 +38,7 @@ export const Header = props => {
   return (
     <header id="header" className="header">
       <ul className="noselect">
-        {Routes.map((route, index) => {
+        {routes.map((route, index) => {
           if (route.label) {
             return (
               <li key={index}>

@@ -1,5 +1,5 @@
 /**
- * File name: src\util\firebase.js
+ * File name: src\utils\firebase.js
  * Created by Visual studio code
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2020-04-07 22:27:17
