@@ -25,25 +25,6 @@ module.exports = {
         loader: 'html-loader'
       },
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        enforce: 'pre',
-        use: [
-          { loader: 'webpack-glob-loader' },
-          {
-            loader: 'eslint-loader',
-            options: {
-              configFile: path.join(__dirname, '../.eslintrc')
-            }
-          }
-        ]
-      },
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
         test: /\.css$/,
         use: [
           'style-loader',
@@ -65,6 +46,25 @@ module.exports = {
           // Compiles Sass to CSS
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        use: [
+          { loader: 'webpack-glob-loader' },
+          {
+            loader: 'eslint-loader',
+            options: {
+              configFile: path.join(__dirname, '../.eslintrc')
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       },
       {
         test: /\.svg$/,
