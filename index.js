@@ -7,10 +7,7 @@
 const fs = require('fs')
 const path = require('path')
 const http = require('http')
-
-// maps file extention to MIME types
-// full list can be found here: https://www.freeformatter.com/mime-types-list.html
-const mimeType = require('./mimeType.json')
+const mime = require('mime-types')
 
 // you can pass the parameter in the command line. e.g. node static_server.js 3000
 const port = process.env.PORT || 3000
@@ -33,13 +30,13 @@ http.createServer((req, res) => {
 
   // read file from file system
   try {
-    const data = fs.readFileSync(pathname, { encoding: 'utf-8' })
+    const file = fs.readFileSync(pathname, 'binary')
     // based on the URL path, extract the file extention. e.g. .js, .doc, ...
-    const ext = path.parse(pathname).ext
     // if the file is found, set Content-Type and send data
-    res.setHeader('Content-Type', mimeType[ext] || 'text/plain')
-    res.setHeader('Content-Length', data.length)
-    return res.end(data)
+    res.setHeader('Content-Type', mime.lookup(pathname))
+    res.setHeader('Content-Length', file.length)
+    res.write(file, 'binary')
+    return res.end()
   } catch (error) {
     res.statusCode = 500
     return res.end(`Error getting the file: ${error.message}.`)

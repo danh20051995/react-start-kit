@@ -114,6 +114,7 @@
     "jest-circus": "^26.6.3",
     "jest-resolve": "^26.6.2",
     "jest-watch-typeahead": "^0.6.1",
+    "mime-types": "^2.1.30",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-safe-parser": "^5.0.2",
     "pre-commit": "^1.2.2",
