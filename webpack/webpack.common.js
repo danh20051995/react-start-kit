@@ -13,6 +13,7 @@ const InterpolateHtmlPlugin = require('interpolate-html-plugin')
 
 const paths = require('../config/paths')
 const getClientEnvironment = require('../config/env')
+const { fileIgnoreRegex } = require('../config/manifest')
 
 const publicUrl = ''
 const env = getClientEnvironment(publicUrl)
@@ -129,6 +130,10 @@ module.exports = {
     // Generate a manifest file which contains a mapping of all asset filenames
     // to their corresponding output file so that tools can pick it up without
     // having to parse `index.html`.
-    new ManifestPlugin()
+    new ManifestPlugin({
+      filter: file => !fileIgnoreRegex.some(
+        regex => regex.test(file.path)
+      )
+    })
   ]
 }

@@ -19,6 +19,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const paths = require('../config/paths')
+const { fileIgnoreRegex } = require('../config/manifest')
 const common = require('./webpack.common.js')
 
 const firstRequire = {
@@ -37,20 +38,7 @@ const firstRequire = {
       // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
       navigateFallbackWhitelist: [ /^(?!\/__).*/ ],
       // Don't precache sourcemaps (they're large) and build asset manifest:
-      staticFileGlobsIgnorePatterns: [
-        // /\.map$/,
-        // /\.ico$/,
-        /\.txt$/,
-        /\.pdf$/,
-        // /\.otf$/,
-        // /\.eot$/,
-        // /\.svg$/,
-        /\.png$/,
-        /\.jpe?g$/,
-        /\.html$/,
-        /manifest\.json$/,
-        /asset-manifest\.json$/
-      ],
+      staticFileGlobsIgnorePatterns: fileIgnoreRegex,
       // Work around Windows path issue in SWPrecacheWebpackPlugin:
       // https://github.com/facebookincubator/create-react-app/issues/2235
       stripPrefix: paths.appBuild.replace(/\\/g, '/') + '/',
