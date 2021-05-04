@@ -1,9 +1,11 @@
 require('dotenv').config()
 
+const PORT = process.env.REACT_APP_PORT || 3000
+
 module.exports = {
   apps: [
     {
-      name: 'react-start-kit',
+      name: `react-start-kit:${PORT}`,
       script: 'index.js',
       watch: false,
       exec_mode: 'fork',
@@ -12,7 +14,7 @@ module.exports = {
       out_file: './pm2logs/react-start-kit_out.log',
       error_file: './pm2logs/react-start-kit_error.log',
       env: {
-        PORT: process.env.REACT_APP_PORT || 3000,
+        PORT,
         NODE_ENV: 'staging'
       }
     }
