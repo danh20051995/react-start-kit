@@ -40,7 +40,7 @@
     "build": "webpack --mode=development --config webpack/webpack.prod.js",
     "eslint": "eslint .",
     "eslint-fix": "eslint . --fix",
-    "test": "node test.js --watchAll=false",
+    "test": "node test.js --passWithNoTests --watchAll=false",
     "test-dev": "node test.js"
   },
   "dependencies": {

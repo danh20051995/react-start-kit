@@ -24,6 +24,7 @@ function removeDir(_path) {
 
 const huskyDir = path.join(__dirname, '.husky')
 removeDir(huskyDir)
+fs.mkdirSync(huskyDir)
 
 
 /**
