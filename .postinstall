@@ -22,10 +22,13 @@ function removeDir(_path) {
   fs.rmdirSync(_path)
 }
 
-const huskyDir = path.join(__dirname, '.husky')
-removeDir(huskyDir)
-fs.mkdirSync(huskyDir)
-
+try {
+  const huskyDir = path.join(__dirname, '.husky')
+  removeDir(huskyDir)
+  fs.mkdirSync(huskyDir)
+} catch (error) {
+  console.log(error)
+}
 
 /**
  * To fix windows error
