@@ -25,7 +25,7 @@ import Footer from '@/layout/footer'
 import Header from '@/layout/header'
 import Loading from '@/components/loading'
 
-// import Logo from '_static/logo.png'
+// import Logo from '@/static/logo.png'
 
 class App extends Component {
   constructor (props) {

@@ -169,7 +169,7 @@
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
       "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
-      "^_static/(.*)$": "<rootDir>/public/static/$1",
+      "^@/static/(.*)$": "<rootDir>/public/static/$1",
       "^@/(.*)$": "<rootDir>/src/$1"
     },
     "moduleFileExtensions": [
