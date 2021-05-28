@@ -15,6 +15,23 @@
     <!-- load fonts - icon font -->
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700|Dancing+Script:300,400,500,600,700|Material+Icons' rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+    <script>
+      // IIFE alert in develop tools
+      ;(function () {
+        var _cssAlertStop =
+          "color: rgb(250, 0, 0);" +
+          "font-size: 50px;" +
+          "font-weight: bold;" +
+          "";
+          // "text-shadow: 1px 1px 5px rgb(249, 162, 34);" +
+          // "filter: dropshadow(color=rgb(249, 162, 34), offx=1, offy=1);"
+        var _cssAlertTXT = "font-size: 25px;";
+
+        console.log("%cDừng lại!", _cssAlertStop)
+        console.log("%cĐây là một tính năng của trình duyệt dành cho các nhà phát triển. Nếu ai đó bảo bạn sao chép-dán nội dung nào đó vào đây để bật một tính năng nào đó hoặc \"hack\" tài khoản của người khác, thì đó là hành vi lừa đảo và sẽ khiến họ có thể truy cập vào tài khoản của bạn.", _cssAlertTXT)
+        console.log("%cXem https://en.wikipedia.org/wiki/Self-XSS để biết thêm thông tin.", _cssAlertTXT)
+      })();
+    </script>
   </head>
   <body>
     <noscript>
