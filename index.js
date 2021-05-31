@@ -34,6 +34,7 @@ http
       req.headers['accept-encoding'] &&
       req.headers['accept-encoding'].includes('gzip')
     const pathnameGzip = `${pathname}.gz`
+    const contentType = mime.lookup(pathname)
     if (
       isGzip &&
       fs.existsSync(pathnameGzip) &&
@@ -48,7 +49,7 @@ http
       const file = fs.readFileSync(pathname, 'binary')
       // based on the URL path, extract the file extention. e.g. .js, .doc, ...
       // if the file is found, set Content-Type and send data
-      res.setHeader('Content-Type', mime.lookup(pathname))
+      res.setHeader('Content-Type', contentType)
       res.setHeader('Content-Length', file.length)
       res.write(file, 'binary')
       return res.end()
