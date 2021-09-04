@@ -133,7 +133,8 @@ module.exports = {
     new ManifestPlugin({
       filter: file => !fileIgnoreRegex.some(
         regex => regex.test(file.path)
-      )
+      ),
+      seed: require(path.resolve(paths.appPublic, 'manifest.json'))
     })
   ]
 }

@@ -180,9 +180,9 @@ module.exports = merge(firstRequire, common, {
       }),
       new CopyPlugin([
         {
-          from: path.resolve(paths.appPublic, 'favicon.ico'),
-          to: path.resolve(paths.appBuild, 'favicon.ico'),
-          toType: 'file'
+          from: path.resolve(paths.appPublic, 'static'),
+          to: path.resolve(paths.appBuild, 'static'),
+          toType: 'dir'
         },
         {
           from: path.resolve(paths.appPublic, 'logo.png'),
@@ -190,9 +190,34 @@ module.exports = merge(firstRequire, common, {
           toType: 'file'
         },
         {
-          from: path.resolve(paths.appPublic, 'static'),
-          to: path.resolve(paths.appBuild, 'static'),
-          toType: 'dir'
+          from: path.resolve(paths.appPublic, 'favicon.ico'),
+          to: path.resolve(paths.appBuild, 'favicon.ico'),
+          toType: 'file'
+        },
+        {
+          from: path.resolve(paths.appPublic, 'favicon-16x16.png'),
+          to: path.resolve(paths.appBuild, 'favicon-16x16.png'),
+          toType: 'file'
+        },
+        {
+          from: path.resolve(paths.appPublic, 'favicon-32x32.png'),
+          to: path.resolve(paths.appBuild, 'favicon-32x32.png'),
+          toType: 'file'
+        },
+        {
+          from: path.resolve(paths.appPublic, 'apple-touch-icon.png'),
+          to: path.resolve(paths.appBuild, 'apple-touch-icon.png'),
+          toType: 'file'
+        },
+        {
+          from: path.resolve(paths.appPublic, 'android-chrome-192x192.png'),
+          to: path.resolve(paths.appBuild, 'android-chrome-192x192.png'),
+          toType: 'file'
+        },
+        {
+          from: path.resolve(paths.appPublic, 'android-chrome-512x512.png'),
+          to: path.resolve(paths.appBuild, 'android-chrome-512x512.png'),
+          toType: 'file'
         }
       ])
     ]
