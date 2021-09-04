@@ -3,7 +3,7 @@ RUN mkdir /app
 WORKDIR /app
 COPY package.json package-lock.json .postinstall ./
 RUN npm i -g npm
-RUN npm install
+RUN npm ci
 
 EXPOSE 3000
 CMD ["npm", "run", "start"]

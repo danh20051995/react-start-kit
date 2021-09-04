@@ -6,15 +6,15 @@
 
 Copy [.env.example](https://github.com/danh20051995/react-start-kit/blob/master/.env.example) to `.env`
 
-``` bash
+```bash
 cp .env.example .env
 ```
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
-npm install
+npm ci
 
 # serve with hot reload at localhost:<port> | config .env REACT_APP_PORT default 3000
 npm run start
@@ -49,8 +49,8 @@ npm run test
 
 ## Work space structure
 
-``` bash
-# ├── README.md           # Documents
+```bash
+├── README.md           # Documents
 ├── .vscode             # vscode editor config
 ├── .env                # environment variables
 ├── .babelrc            # babel config
