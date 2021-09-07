@@ -13,7 +13,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const safePostCssParser = require('postcss-safe-parser')
 const CompressionPlugin = require('compression-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
@@ -41,6 +41,7 @@ const firstRequire = {
   plugins: [
     new SWPrecacheWebpackPlugin({
       filename: 'service-worker.js',
+      maximumFileSizeToCacheInBytes: 10 * 1024 * 1024,
       // By default, a cache-busting query parameter is appended to requests
       // used to populate the caches, to ensure the responses are fresh.
       // If a URL is already hashed by Webpack, then there is no concern
@@ -70,7 +71,7 @@ const firstRequire = {
         console.log(message)
       }
     }),
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     // new CompressionPlugin({ test: /\.(css|js|html|svg)$/ })
     new CompressionPlugin({ test: /\.js$/ })
     // new BundleAnalyzerPlugin()
