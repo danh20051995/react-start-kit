@@ -19,8 +19,23 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const paths = require('../config/paths')
-const { fileIgnoreRegex } = require('../config/manifest')
 const common = require('./webpack.common.js')
+const fileIgnorePreCacheRegex = [
+  // /\.map$/,
+  // /\.ico$/,
+  /\.txt$/,
+  /\.pdf$/,
+  /\.gz$/,
+  // /\.otf$/,
+  // /\.eot$/,
+  // /\.svg$/,
+  // /\.png$/,
+  // /\.jpe?g$/,
+  /\.html$/,
+  // /manifest\.json$/,
+  /asset-manifest\.json$/,
+  /\.DS_Store$/
+]
 
 const firstRequire = {
   plugins: [
@@ -33,17 +48,17 @@ const firstRequire = {
       dontCacheBustUrlsMatching: /\.\w{8}\./,
       minify: true,
       // For unknown URLs, fallback to the index page
-      navigateFallback: paths.servedPath.slice(0, -1) + '/index.html',
+      navigateFallback: '/',
       // Ignores URLs starting from /__ (useful for Firebase):
       // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
       navigateFallbackWhitelist: [ /^(?!\/__).*/ ],
       // Don't precache sourcemaps (they're large) and build asset manifest:
-      staticFileGlobsIgnorePatterns: fileIgnoreRegex,
+      staticFileGlobsIgnorePatterns: fileIgnorePreCacheRegex,
       // Work around Windows path issue in SWPrecacheWebpackPlugin:
       // https://github.com/facebookincubator/create-react-app/issues/2235
       stripPrefix: paths.appBuild.replace(/\\/g, '/') + '/',
       importScripts: [
-        { chunkName: 'main' }
+        // { chunkName: 'main' },
         // { chunkName: 'index' },
         // { chunkName: 'polyfills' }
       ],
@@ -192,6 +207,11 @@ module.exports = merge(firstRequire, common, {
         {
           from: path.resolve(paths.appPublic, 'favicon.ico'),
           to: path.resolve(paths.appBuild, 'favicon.ico'),
+          toType: 'file'
+        },
+        {
+          from: path.resolve(paths.appPublic, 'manifest.json'),
+          to: path.resolve(paths.appBuild, 'manifest.json'),
           toType: 'file'
         },
         {

@@ -7,13 +7,11 @@
 
 const path = require('path')
 const webpack = require('webpack')
-const ManifestPlugin = require('webpack-manifest-plugin')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const InterpolateHtmlPlugin = require('interpolate-html-plugin')
 
 const paths = require('../config/paths')
 const getClientEnvironment = require('../config/env')
-const { fileIgnoreRegex } = require('../config/manifest')
 
 const publicUrl = ''
 const env = getClientEnvironment(publicUrl)
@@ -126,15 +124,6 @@ module.exports = {
       template: paths.appHtml
     }),
     new InterpolateHtmlPlugin(env.raw),
-    new webpack.DefinePlugin(env.stringified),
-    // Generate a manifest file which contains a mapping of all asset filenames
-    // to their corresponding output file so that tools can pick it up without
-    // having to parse `index.html`.
-    new ManifestPlugin({
-      filter: file => !fileIgnoreRegex.some(
-        regex => regex.test(file.path)
-      ),
-      seed: require(path.resolve(paths.appPublic, 'manifest.json'))
-    })
+    new webpack.DefinePlugin(env.stringified)
   ]
 }
