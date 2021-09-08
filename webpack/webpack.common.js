@@ -39,11 +39,24 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
-          'style-loader',
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap: true,
+              minimize: true,
+              importLoaders: 1
+            }
+          },
           // Translates CSS into CommonJS
           'css-loader',
           // Compiles Sass to CSS
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              outputStyle: 'compressed',
+              sourceMap: true
+            }
+          }
         ]
       },
       {
@@ -116,14 +129,14 @@ module.exports = {
     }
   },
   plugins: [
+    new webpack.ProgressPlugin(),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.HashedModuleIdsPlugin(),
-    new webpack.ProgressPlugin(),
+    new webpack.DefinePlugin(env.stringified),
     new HtmlWebPackPlugin({
       inject: true,
       template: paths.appHtml
     }),
-    new InterpolateHtmlPlugin(env.raw),
-    new webpack.DefinePlugin(env.stringified)
+    new InterpolateHtmlPlugin(env.raw)
   ]
 }
