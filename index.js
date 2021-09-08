@@ -18,7 +18,7 @@ http
 
     // extract URL path
     // Avoid https://en.wikipedia.org/wiki/Directory_traversal_attack
-    // e.g curl --path-as-is http://localhost:9000/../fileInDanger.txt
+    // e.g curl --path-as-is http://localhost:3000/../fileInDanger.txt
     // by limiting the path to current directory only
     const sanitizePath = path
       .normalize(req.url.split('?').shift())
@@ -47,7 +47,7 @@ http
     // read file from file system
     try {
       const file = fs.readFileSync(pathname, 'binary')
-      // based on the URL path, extract the file extention. e.g. .js, .doc, ...
+      // based on the URL path, extract the file extension. e.g. .js, .doc, ...
       // if the file is found, set Content-Type and send data
       res.setHeader('Content-Type', contentType)
       res.setHeader('Content-Length', file.length)

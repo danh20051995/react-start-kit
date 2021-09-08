@@ -37,9 +37,9 @@ const appAlias = app => /^win/.test(process.platform) ? `${app}.cmd` : app
 
 const scripts = [
   [ appAlias('npx'), [ 'husky', 'install' ] ],
-  [ appAlias('npx'), [ 'husky', 'add', '.husky/pre-commit', 'npx lint-staged' ] ],
-  [ appAlias('npx'), [ 'husky', 'add', '.husky/pre-commit', 'npm run test' ] ],
-  // [ appAlias('npx'), [ 'husky', 'add', '.husky/pre-push', 'npm run test' ] ],
+  [ appAlias('npx'), [ 'husky', 'add', '.husky/pre-commit', '"npx lint-staged"' ] ],
+  [ appAlias('npx'), [ 'husky', 'add', '.husky/pre-commit', '"npm run test"' ] ],
+  // [ appAlias('npx'), [ 'husky', 'add', '.husky/pre-push', '"npm run test"' ] ],
 ]
 
 const runCMD = (cmd, options) => new Promise((resolve, reject) => {
