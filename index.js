@@ -4,13 +4,15 @@
  * User: Danh Le / danh.danh20051995@gmail.com
  * Date: 2021-03-05 14:46:18
  */
+require('dotenv').config()
+
 const fs = require('fs')
 const path = require('path')
 const http = require('http')
 const mime = require('mime-types')
 
 // you can pass the parameter in the command line. e.g. node static_server.js 3000
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || process.env.REACT_APP_PORT || 3000
 
 http
   .createServer((req, res) => {
@@ -58,6 +60,6 @@ http
       return res.end(`Error getting the file: ${error.message}.`)
     }
   })
-  .listen(parseInt(port))
+  .listen(parseInt(PORT))
 
-console.log(`Server listening on port: ${port}`)
+console.log(`App running on: http://localhost:${PORT}`)

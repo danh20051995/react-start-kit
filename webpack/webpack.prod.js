@@ -19,23 +19,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 // const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const paths = require('../config/paths')
+const preCache = require('../config/pre-cache')
 const common = require('./webpack.common.js')
-const fileIgnorePreCacheRegex = [
-  // /\.map$/,
-  // /\.ico$/,
-  /\.txt$/,
-  /\.pdf$/,
-  /\.gz$/,
-  // /\.otf$/,
-  // /\.eot$/,
-  // /\.svg$/,
-  // /\.png$/,
-  // /\.jpe?g$/,
-  /\.html$/,
-  // /manifest\.json$/,
-  /asset-manifest\.json$/,
-  /\.DS_Store$/
-]
 
 module.exports = merge(common, {
   mode: 'production',
@@ -69,8 +54,7 @@ module.exports = merge(common, {
 
   plugins: [
     // new CleanWebpackPlugin(),
-    // new CompressionPlugin({ test: /\.(css|js|html|svg)$/ })
-    new CompressionPlugin({ test: /\.js$/ }),
+    new CompressionPlugin({ test: /\.(html|css|js|svg)$/ }),
     // new BundleAnalyzerPlugin(),
     new SWPrecacheWebpackPlugin({
       filename: 'service-worker.js',
@@ -87,7 +71,18 @@ module.exports = merge(common, {
       // https://github.com/facebookincubator/create-react-app/issues/2237#issuecomment-302693219
       navigateFallbackWhitelist: [ /^(?!\/__).*/ ],
       // Don't precache sourcemaps (they're large) and build asset manifest:
-      staticFileGlobsIgnorePatterns: fileIgnorePreCacheRegex,
+      staticFileGlobsIgnorePatterns: preCache.fileIgnorePreCacheRegex,
+      runtimeCaching: [
+        {
+          urlPattern: preCache.runtimeCachePattern,
+          handler: 'cacheFirst',
+          options: {
+            cache: {
+              name: 'runtime-cache'
+            }
+          }
+        }
+      ],
       // Work around Windows path issue in SWPrecacheWebpackPlugin:
       // https://github.com/facebookincubator/create-react-app/issues/2235
       stripPrefix: paths.appBuild.replace(/\\/g, '/') + '/',

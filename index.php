@@ -112,17 +112,26 @@ class Request
 
   static function path()
   {
-    return array_shift(explode('?', $_SERVER['REQUEST_URI']));
+    $paths = explode('?', Request::uri());
+    return array_shift($paths);
   }
 
   static function isAccept($type)
   {
+    if (!isset($_SERVER['HTTP_ACCEPT_ENCODING'])) {
+      return false;
+    }
+
     return strpos($_SERVER['HTTP_ACCEPT_ENCODING'], $type) !== false;
   }
 }
 
 function response($file)
 {
+  if (Request::isAccept('gzip') && file_exists("$file.gz")) {
+    $file = "$file.gz";
+  }
+
   preg_match("|\.([a-z0-9]{2,4})$|i", $file, $fileSuffix);
   if (strtolower($fileSuffix[1]) === 'gz') {
     header("Content-Encoding: gzip");
@@ -139,23 +148,14 @@ function response($file)
 
 $_METHOD = Request::method();
 $_PATHNAME = Request::path();
-console_log("$_METHOD | $_PATHNAME");
 
 $CURRENT_DIR = dirname(__FILE__);
 $BUILD_DIR = join_paths($CURRENT_DIR, 'build');
 $FILE_DEFAULT = join_paths($BUILD_DIR, 'index.html');
 $FILE_PATH = join_paths($BUILD_DIR, Request::path());
 
-if (is_dir($FILE_PATH)) {
+if (is_dir($FILE_PATH) || !file_exists($FILE_PATH)) {
   return response($FILE_DEFAULT);
 }
 
-if (Request::isAccept('gzip') && file_exists("$FILE_PATH.gz")) {
-  return response("$FILE_PATH.gz");
-}
-
-if (file_exists($FILE_PATH)) {
-  return response($FILE_PATH);
-}
-
-return response($FILE_DEFAULT);
+return response($FILE_PATH);

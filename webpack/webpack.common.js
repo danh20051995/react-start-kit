@@ -7,10 +7,12 @@
 
 const path = require('path')
 const webpack = require('webpack')
+const ManifestPlugin = require('webpack-manifest-plugin')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const InterpolateHtmlPlugin = require('interpolate-html-plugin')
 
 const paths = require('../config/paths')
+const PACKAGE = require(paths.appPackageJson)
 const getClientEnvironment = require('../config/env')
 
 const publicUrl = ''
@@ -135,8 +137,28 @@ module.exports = {
     new webpack.DefinePlugin(env.stringified),
     new HtmlWebPackPlugin({
       inject: true,
-      template: paths.appHtml
+      template: paths.appHtml,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+        sortAttributes: true,
+        sortClassName: true
+      }
     }),
-    new InterpolateHtmlPlugin(env.raw)
+    new InterpolateHtmlPlugin(env.raw),
+    // Generate a manifest file which contains a mapping of all asset filenames
+    // to their corresponding output file so that tools can pick it up without
+    // having to parse `index.html`.
+    new ManifestPlugin({
+      generate: () => {
+        const manifest = require(paths.appManifest)
+        manifest.name = PACKAGE.name
+        manifest.short_name = PACKAGE.name
+        return manifest
+      }
+    })
   ]
 }

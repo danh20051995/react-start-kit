@@ -1,56 +1,96 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
 
-    <title>react-start-kit|A sample reactjs template</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
 
-    <!-- load fonts - icon font -->
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700|Dancing+Script:300,400,500,600,700|Material+Icons' rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
-    <script>
-      // IIFE alert in develop tools
-      ;(function () {
-        var _cssAlertStop =
-          "color: rgb(250, 0, 0);" +
-          "font-size: 50px;" +
-          "font-weight: bold;" +
-          "";
-          // "text-shadow: 1px 1px 5px rgb(249, 162, 34);" +
-          // "filter: dropshadow(color=rgb(249, 162, 34), offx=1, offy=1);"
-        var _cssAlertTXT = "font-size: 25px;";
+  <!--
+    manifest.json provides metadata used when your web app is added to the
+    homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+  -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
 
-        console.log("%cDừng lại!", _cssAlertStop)
-        console.log("%cĐây là một tính năng của trình duyệt dành cho các nhà phát triển. Nếu ai đó bảo bạn sao chép-dán nội dung nào đó vào đây để bật một tính năng nào đó hoặc \"hack\" tài khoản của người khác, thì đó là hành vi lừa đảo và sẽ khiến họ có thể truy cập vào tài khoản của bạn.", _cssAlertTXT)
-        console.log("%cXem https://en.wikipedia.org/wiki/Self-XSS để biết thêm thông tin.", _cssAlertTXT)
-      })();
-    </script>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+  <title>%APP_NAME%</title>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+  <!-- load fonts - icon font -->
+  <link
+    href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700|Dancing+Script:300,400,500,600,700|Material+Icons'
+    rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+  <style>
+    .mod-noscript {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 99999;
+      background-color: #fff;
+      color: #000;
+    }
+    .mod-noscript h3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      text-transform: uppercase;
+    }
+  </style>
+
+  <script>
+    console.log('Version: %APP_VERSION%')
+  </script>
+
+  <!-- <script>
+    // IIFE alert in develop tools
+    ;(function () {
+      const _cssAlertStop =
+        "color: rgb(250, 0, 0);" +
+        "font-size: 50px;" +
+        "font-weight: bold;" +
+        "";
+      // "text-shadow: 1px 1px 5px rgb(249, 162, 34);" +
+      // "filter: dropshadow(color=rgb(249, 162, 34), offx=1, offy=1);"
+      const _cssAlertTXT = "font-size: 25px;";
+
+      console.log("%cDừng lại!", _cssAlertStop)
+      console.log("%cĐây là một tính năng của trình duyệt dành cho các nhà phát triển. Nếu ai đó bảo bạn sao chép-dán nội dung nào đó vào đây để bật một tính năng nào đó hoặc \"hack\" tài khoản của người khác, thì đó là hành vi lừa đảo và sẽ khiến họ có thể truy cập vào tài khoản của bạn.", _cssAlertTXT)
+      console.log("%cXem https://en.wikipedia.org/wiki/Self-XSS để biết thêm thông tin.", _cssAlertTXT)
+    })();
+  </script> -->
+
+  <script>
+    console.log("%cDừng lại!","color: rgb(250, 0, 0);font-size: 50px;font-weight: bold;"),console.log('%cĐây là một tính năng của trình duyệt dành cho các nhà phát triển. Nếu ai đó bảo bạn sao chép-dán nội dung nào đó vào đây để bật một tính năng nào đó hoặc "hack" tài khoản của người khác, thì đó là hành vi lừa đảo và sẽ khiến họ có thể truy cập vào tài khoản của bạn.',"font-size: 25px;"),console.log("%cXem https://en.wikipedia.org/wiki/Self-XSS để biết thêm thông tin.","font-size: 25px;");
+  </script>
+</head>
+
+<body>
+  <noscript>
+    <div id="mod-noscript" class="mod-noscript">
+      <!-- <h3>To use web better, please enable Javascript.</h3> -->
+      <h3>You need to enable JavaScript to run this app.</h3>
+    </div>
+  </noscript>
+
+  <div id="root"></div>
+  <!--
+    This HTML file is a template.
+    If you open it directly in the browser, you will see an empty page.
+
+    You can add webfonts, meta tags, or analytics to this file.
+    The build step will place the bundled scripts into the <body> tag.
+
+    To begin the development, run `npm start` or `yarn start`.
+    To create a production bundle, use `npm run build` or `yarn build`.
+  -->
+</body>
+
 </html>

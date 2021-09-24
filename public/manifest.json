@@ -1,6 +1,6 @@
 {
-  "name": "react-start-kit",
-  "short_name": "react-start-kit",
+  "name": "INJECT_NAME",
+  "short_name": "INJECT_NAME",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

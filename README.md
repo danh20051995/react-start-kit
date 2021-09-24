@@ -32,6 +32,27 @@ npm run eslint
 npm run test
 ```
 
+## To test build bundle in local
+
+### Run with PHP
+
+```bash
+php -S localhost:[PORT|3000] -t ./ index.php
+```
+
+### Run with Nodejs
+
+```bash
+node index.js
+```
+
+### Run with PM2
+
+```bash
+pm2 start ecosystem.config.js
+```
+
+
 ## Installed
 
 |     Plugin          |     Document  |
