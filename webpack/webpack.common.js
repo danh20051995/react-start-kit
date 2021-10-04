@@ -1,10 +1,3 @@
-/**
- * File name: webpack.common.js
- * Created by Visual studio code
- * User: Danh Le / danh.le@dinovative.com
- * Date: 2020-03-10 14:02:30
- */
-
 const path = require('path')
 const webpack = require('webpack')
 const ManifestPlugin = require('webpack-manifest-plugin')

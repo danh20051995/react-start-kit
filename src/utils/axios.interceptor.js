@@ -1,9 +1,3 @@
-/**
- * File name: src/utils/axios.interceptor.js
- * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2021-03-09 18:39:49
- */
 import axios from 'axios'
 import { ensureArray } from './helpers'
 import { langInterceptor } from './axios.interceptor.lang'

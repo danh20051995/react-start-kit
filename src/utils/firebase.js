@@ -1,10 +1,3 @@
-/**
- * File name: src\utils\firebase.js
- * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2020-04-07 22:27:17
- */
-
 // https://firebase.google.com/docs/web/setup#libraries-bundle
 import firebase from 'firebase/app'
 import 'firebase/auth'

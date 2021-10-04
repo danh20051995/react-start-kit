@@ -58,7 +58,8 @@ pm2 start ecosystem.config.js
 |     Plugin          |     Document  |
 |     ------------    |     -----------         |
 | Package manager | [npm](https://www.npmjs.com/) |
-| Hook installer for git | [pre-commit](https://github.com/observing/pre-commit) |
+| Hook installer for git | [husky](https://github.com/typicode/husky) |
+| Run linter staged git files | [lint-staged](https://github.com/okonet/lint-staged) |
 | Module bundler | [webpack-v4](https://v4.webpack.js.org/api) |
 | Javascript compiler | [babel](https://babeljs.io/) |
 | CSS preprocessor | [sass](https://sass-lang.com) |

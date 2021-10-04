@@ -1,9 +1,3 @@
-/**
- * File name: src/hooks/useWindowResize.js
- * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2021-03-08 14:18:01
- */
 import { useState, useEffect } from 'react'
 
 const useWindowResize = () => {

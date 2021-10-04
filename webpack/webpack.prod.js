@@ -1,9 +1,3 @@
-/**
- * File name: webpack.prod.js
- * Created by Visual studio code
- * User: Danh Le / danh.le@dinovative.com
- * Date: 2020-03-10 16:13:59
- */
 process.env.NODE_ENV = 'production'
 
 const path = require('path')

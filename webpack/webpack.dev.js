@@ -1,9 +1,3 @@
-/**
- * File name: webpack.dev.js
- * Created by Visual studio code
- * User: Danh Le / danh.le@dinovative.com
- * Date: 2020-03-10 16:13:51
- */
 process.env.NODE_ENV = 'development'
 
 const path = require('path')

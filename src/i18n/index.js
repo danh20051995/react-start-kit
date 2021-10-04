@@ -1,9 +1,3 @@
-/**
- * File name: src\i18n\index.js
- * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2020-04-07 07:44:33
- */
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import HttpApi from 'i18next-http-backend'

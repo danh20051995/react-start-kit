@@ -1,9 +1,3 @@
-/**
- * File name: index.js
- * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2021-03-05 14:46:18
- */
 require('dotenv').config()
 
 const fs = require('fs')

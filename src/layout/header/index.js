@@ -1,9 +1,3 @@
-/**
- * File name: src\layout\header\index.js
- * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2020-04-12 23:18:55
- */
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { matchPath, Link, useLocation } from 'react-router-dom'

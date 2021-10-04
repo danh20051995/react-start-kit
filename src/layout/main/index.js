@@ -1,9 +1,3 @@
-/**
- * File name: src\layout\main\index.js
- * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2020-04-12 23:21:53
- */
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { routes } from '@/router'

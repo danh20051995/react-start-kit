@@ -1,9 +1,3 @@
-/**
- * File name: detail.js
- * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2019-01-16 22:20:12
- */
 import React, { Component } from 'react'
 import { Redirect } from 'react-router'
 import { connect } from 'react-redux'

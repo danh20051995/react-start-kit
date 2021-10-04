@@ -1,9 +1,3 @@
-/**
- * File name: src\router\generate.js
- * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2020-03-24 20:44:52
- */
 import qs from 'qs'
 import { routes } from '@/router'
 import { ensureObject, alphabeticalSort } from '@/utils/helpers'

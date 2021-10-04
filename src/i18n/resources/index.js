@@ -1,9 +1,3 @@
-/**
- * File name: src\i18n\resources\index.js
- * Created by Visual studio code
- * User: Danh Le / danh.danh20051995@gmail.com
- * Date: 2020-04-07 07:44:54
- */
 import { ensureObject } from '@/utils/helpers'
 import { languages as langs } from '@/i18n/languages'
 import error from './error.json'
