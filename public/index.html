@@ -43,6 +43,61 @@
       margin: 0;
       text-transform: uppercase;
     }
+    .splash-screen {
+      position: fixed;
+      z-index: 999;
+      height: 2em;
+      width: 2em;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+    .splash-screen:before {
+      content: '';
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .splash-screen:not(:required) {
+      font: 0/0 a;
+      color: transparent;
+      text-shadow: none;
+      background-color: transparent;
+      border: 0;
+    }
+    .splash-screen:not(:required):after {
+      content: '';
+      display: block;
+      font-size: 10px;
+      width: 1em;
+      height: 1em;
+      margin-top: -0.5em;
+      animation: flashScreenAnimate 1500ms infinite linear;
+      border-radius: 0.5em;
+      box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+    }
+    @keyframes flashScreenAnimate {
+      0% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
   </style>
 
   <script>
@@ -70,6 +125,17 @@
   <script>
     console.log("%cDừng lại!","color: rgb(250, 0, 0);font-size: 50px;font-weight: bold;"),console.log('%cĐây là một tính năng của trình duyệt dành cho các nhà phát triển. Nếu ai đó bảo bạn sao chép-dán nội dung nào đó vào đây để bật một tính năng nào đó hoặc "hack" tài khoản của người khác, thì đó là hành vi lừa đảo và sẽ khiến họ có thể truy cập vào tài khoản của bạn.',"font-size: 25px;"),console.log("%cXem https://en.wikipedia.org/wiki/Self-XSS để biết thêm thông tin.","font-size: 25px;");
   </script>
+
+  <!-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(() => {
+        document.getElementById('splash-screen').remove()
+      }, 1000)
+    })
+  </script> -->
+  <script>
+    document.addEventListener("DOMContentLoaded",function(){setTimeout(()=>{document.getElementById("splash-screen").remove()},1e3)});
+  </script>
 </head>
 
 <body>
@@ -81,6 +147,11 @@
   </noscript>
 
   <div id="root"></div>
+
+  <div id="splash-screen" class="splash-screen">
+    Loading&#8230;
+  </div>
+
   <!--
     This HTML file is a template.
     If you open it directly in the browser, you will see an empty page.

@@ -1,9 +1,10 @@
 import React from 'react'
 
-const Loading = props => {
-  return (
-    <div className="app-loading">Loading&#8230;</div>
-  )
-}
-
-export default Loading
+export default props => (
+  <div
+    className="app-loading"
+    style={{ display: props.show ? '' : 'none' }}
+  >
+    Loading&#8230;
+  </div>
+)

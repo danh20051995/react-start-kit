@@ -1,4 +1,6 @@
 import NotFound from '@/module/core/components/404'
+
+// eslint-disable-next-line
 import RouteModules from '../module/**/route.js'
 
 export const routes = [

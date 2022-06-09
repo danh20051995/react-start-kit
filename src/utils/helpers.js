@@ -1,48 +1,3 @@
-import { toast } from 'react-toastify'
-
-export const errorNotify = notify => {
-  toast.error(notify.message, {
-    position: toast.POSITION.TOP_RIGHT,
-    ...notify
-  })
-}
-
-export const successNotify = notify => {
-  toast.success(notify.message, {
-    position: toast.POSITION.TOP_RIGHT,
-    ...notify
-  })
-}
-
-export const warnNotify = notify => {
-  toast.warn(notify.message, {
-    position: toast.POSITION.TOP_RIGHT,
-    ...notify
-  })
-}
-
-export const infoNotify = notify => {
-  toast.info(notify.message, {
-    position: toast.POSITION.TOP_RIGHT,
-    ...notify
-  })
-}
-
-export const apiErrorMessage = response => {
-  try {
-    if (response && typeof response === 'object') {
-      return (response.data && (response.data.message || response.data.error || JSON.stringify(response.data, null, 2))) || response.data || response.message || response
-    }
-
-    return typeof response === 'string' ? response : JSON.stringify(response, null, 2)
-  } catch (error) {
-    return String(response)
-  }
-}
-
-export const errorHandle = error => errorNotify({ message: apiErrorMessage(error.response || error) })
-
-export const successHandle = message => successNotify({ message })
 
 /**
  * @param {Number} time
@@ -234,13 +189,6 @@ export const convertErrorYup = error => {
 }
 
 export default {
-  errorNotify,
-  successNotify,
-  warnNotify,
-  infoNotify,
-  apiErrorMessage,
-  errorHandle,
-  successHandle,
   sleep,
   isArray,
   isObject,
